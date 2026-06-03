@@ -46,7 +46,7 @@ export function CTASection() {
           <CardContent className="relative z-10 p-5 sm:p-6 lg:p-14">
 
             {/* ================= DESKTOP ================= */}
-            <div className="hidden lg:block text-right max-w-xl ml-auto">
+            <div className="hidden lg:block text-right max-w-xl ml-auto h-[250px] py-14 mt-[-105px]">
 
               <h2 className="text-4xl font-bold text-white mb-6">
                 Ready to Elevate Your Digital Presence?
