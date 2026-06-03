@@ -125,6 +125,7 @@ export function HeroImageCarousel({ images }: HeroImageCarouselProps) {
                 src={image.src}
                 alt={image.alt}
                 fill
+                sizes="200px"
                 className="object-contain"
                 priority={isTop}
                 draggable={false}

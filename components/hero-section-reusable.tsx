@@ -174,6 +174,8 @@ export function HeroSection({
                       src={image.src}
                       alt={image.alt}
                       fill
+                      priority={index < 4}
+                      sizes="220px"
                       className="object-contain"
                     />
 

@@ -215,15 +215,13 @@ export default function Home() {
   const [currentTestimonial, setCurrentTestimonial] = useState(0)
   const [openIndex, setOpenIndex] = useState(0)
   return (
-    <div>
-
-      <main>
-
-              <section
+    <>
+      <HeroVideoSection />
+        <section
           ref={statsRef}
-          className="py-12 lg:py-16 bg-gradient-to-b from-secondary/20 to-background relative overflow-hidden"
+          className=" bg-gradient-to-b from-secondary/20 to-background overflow-hidden mt-20"
         >
-          <div className="container mx-auto px-4 relative z-10 ">
+          <div className="container mx-auto px-4  ">
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
               <div className="stat-card text-center p-6 rounded-2xl bg-card border-2 border-border shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
                 <AnimatedCounter  end={900} suffix="+" />
@@ -1612,8 +1610,6 @@ export default function Home() {
         {/* CTA Section before Footer */}
         <CTASection />
 
-
-      </main>
-    </div>
+    </>
   )
 }

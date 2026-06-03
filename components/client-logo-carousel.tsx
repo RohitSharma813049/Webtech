@@ -11,30 +11,30 @@ import { EnquiryPopup } from "./enquiry-popup"
 const clientLogos = [
   // Column 1 - Scrolls Up
   [
-    "/clintelogo/ew.webp",
-    "/clintelogo/lex.webp",
-    "/clintelogo/logo1.webp",
-    "/clintelogo/logo2.webp",
-    "/clintelogo/logo4.webp",
-    "/clintelogo/logo5.webp",
+    "/image/images/client-logos/webeside-technology-client-ew-logo.webp",
+    "/image/images/client-logos/webeside-technology-client-lex-logo.webp",
+    "/image/images/client-logos/webeside-technology-client-brand-01.webp",
+    "/image/images/client-logos/webeside-technology-client-brand-02.webp",
+    "/image/images/client-logos/webeside-technology-client-brand-04.webp",
+    "/image/images/client-logos/webeside-technology-client-brand-05.webp",
   ],
   // Column 2 - Scrolls Down
   [
-    "/clintelogo/logo6.webp",
-    "/clintelogo/logo7.webp",
-    "/clintelogo/nse.webp",
-    "/clintelogo/pinaki.webp",
-    "/clintelogo/sobha.webp",
-    "/clintelogo/toy.webp",
+    "/image/images/client-logos/webeside-technology-client-brand-06.webp",
+    "/image/images/client-logos/webeside-technology-client-brand-07.webp",
+    "/image/images/client-logos/webeside-technology-client-nse-logo.webp",
+    "/image/images/client-logos/webeside-technology-client-pinaki-logo.webp",
+    "/image/images/client-logos/webeside-technology-client-sobha-logo.webp",
+    "/image/images/client-logos/webeside-technology-client-toy-logo.webp",
   ],
   // Column 3 - Scrolls Up
   [
-   "/clintelogo/ew.webp",
-    "/clintelogo/lex.webp",
-    "/clintelogo/logo1.webp",
-    "/clintelogo/logo2.webp",
-    "/clintelogo/logo4.webp",
-    "/clintelogo/logo5.webp",
+    "/image/images/client-logos/webeside-technology-client-ew-logo.webp",
+    "/image/images/client-logos/webeside-technology-client-lex-logo.webp",
+    "/image/images/client-logos/webeside-technology-client-brand-01.webp",
+    "/image/images/client-logos/webeside-technology-client-brand-02.webp",
+    "/image/images/client-logos/webeside-technology-client-brand-04.webp",
+    "/image/images/client-logos/webeside-technology-client-brand-05.webp",
   ],
 ]
 

@@ -24,6 +24,7 @@ import { DiscountPopup } from "@/components/discount-popup";
 import { WelcomePopup } from "@/components/welcome-popup";
 import FloatingWidgets from "@/components/FloatingWights";
 import { ScrollAnimation } from "@/components/scroll-animation";
+import HeroVideoSection from "@/components/hero-video-section";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -76,7 +77,7 @@ export default function RootLayout({
         {/* Welcome popup */}
         <WelcomePopup />
 
-<main className="flex-1 overflow-x-hidden">
+<main className="flex-1">
   <div className="mx-auto w-full max-w-7xl px-3 sm:px-4 md:px-6 lg:px-8">
     {children}
   </div>

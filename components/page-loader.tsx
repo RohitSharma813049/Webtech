@@ -95,6 +95,7 @@ export function PageLoader() {
               src={img}
               alt=""
               fill
+              priority
               sizes="(max-width:768px) 33vw, 20vw"
               className="object-contain"
             />

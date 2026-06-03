@@ -796,7 +796,6 @@ export function Header() {
           </div>
         )}
       </header>
-      <HeroVideoSection/>
     </>
   )
 }
