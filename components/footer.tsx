@@ -156,11 +156,11 @@ export const Footer = memo(function Footer() {
   return (
     <footer className="bg-[rgb(31,1,89)] text-white mt-20 relative overflow-hidden">
       {/* Scroll To Top */}
-<div className="absolute -top-0 right-4 lg:right-8 z-20">
-  <Button
-    onClick={scrollToTop}
-    size="icon"
-    className="
+      <div className="absolute -top-0 right-4 lg:right-8 z-20">
+        <Button
+          onClick={scrollToTop}
+          size="icon"
+          className="
       w-10 h-10
       lg:w-12 lg:h-12
       rounded-full
@@ -170,21 +170,20 @@ export const Footer = memo(function Footer() {
       border
       border-white/10
     "
-  >
-    <ArrowUp className="w-4 h-4 lg:w-5 lg:h-5" />
-  </Button>
-</div>
+        >
+          <ArrowUp className="w-4 h-4 lg:w-5 lg:h-5" />
+        </Button>
+      </div>
 
       <div className="container mx-auto px-4 py-12">
         {/* DESKTOP TABS */}
         <div className="hidden lg:flex gap-0 mb-12 border-b border-white/20">
           <button
             onClick={() => setActiveTab("home")}
-            className={`px-6 py-3 font-semibold flex items-center gap-2 transition-all border-b-2 ${
-              activeTab === "home"
-                ? "border-yellow-500 text-yellow-400"
-                : "border-transparent text-gray-300 hover:text-white"
-            }`}
+            className={`px-6 py-3 font-semibold flex items-center gap-2 transition-all border-b-2 ${activeTab === "home"
+              ? "border-yellow-500 text-yellow-400"
+              : "border-transparent text-gray-300 hover:text-white"
+              }`}
           >
             <Home className="w-5 h-5" />
             Home
@@ -192,11 +191,10 @@ export const Footer = memo(function Footer() {
 
           <button
             onClick={() => setActiveTab("brands")}
-            className={`px-6 py-3 font-semibold flex items-center gap-2 transition-all border-b-2 ${
-              activeTab === "brands"
-                ? "border-yellow-500 text-yellow-400"
-                : "border-transparent text-gray-300 hover:text-white"
-            }`}
+            className={`px-6 py-3 font-semibold flex items-center gap-2 transition-all border-b-2 ${activeTab === "brands"
+              ? "border-yellow-500 text-yellow-400"
+              : "border-transparent text-gray-300 hover:text-white"
+              }`}
           >
             <Zap className="w-5 h-5" />
             Our Services
@@ -204,23 +202,21 @@ export const Footer = memo(function Footer() {
 
           <button
             onClick={() => setActiveTab("tags")}
-            className={`px-6 py-3 font-semibold flex items-center gap-2 transition-all border-b-2 ${
-              activeTab === "tags"
-                ? "border-yellow-500 text-yellow-400"
-                : "border-transparent text-gray-300 hover:text-white"
-            }`}
+            className={`px-6 py-3 font-semibold flex items-center gap-2 transition-all border-b-2 ${activeTab === "tags"
+              ? "border-yellow-500 text-yellow-400"
+              : "border-transparent text-gray-300 hover:text-white"
+              }`}
           >
             <Tag className="w-5 h-5" />
             Tags
           </button>
-          
+
           <button
             onClick={() => setActiveTab("location")}
-            className={`px-6 py-3 font-semibold flex items-center gap-2 transition-all border-b-2 ${
-              activeTab === "location"
-                ? "border-yellow-500 text-yellow-400"
-                : "border-transparent text-gray-300 hover:text-white"
-            }`}
+            className={`px-6 py-3 font-semibold flex items-center gap-2 transition-all border-b-2 ${activeTab === "location"
+              ? "border-yellow-500 text-yellow-400"
+              : "border-transparent text-gray-300 hover:text-white"
+              }`}
           >
             <Tag className="w-5 h-5" />
             Location
@@ -365,9 +361,9 @@ export const Footer = memo(function Footer() {
                     </a>
                   </div>
                 </div>
- 
 
-          <div className="flex items-start gap-3">
+
+                <div className="flex items-start gap-3">
                   <MapPin className="w-5 h-5 text-blue-400 mt-1 flex-shrink-0" />
 
                   <div className="flex flex-col gap-3">
@@ -381,7 +377,7 @@ export const Footer = memo(function Footer() {
                     </a>
                   </div>
                 </div>
-                                    
+
 
 
                 {/* Phone */}
@@ -470,38 +466,38 @@ export const Footer = memo(function Footer() {
           </div>
         )}
         {/* LOCATION TAB */}
-{activeTab === "location" && (
-  <div className="hidden lg:block mb-12">
-    <h3 className="text-2xl font-bold mb-6">
-      Our Locations
-    </h3>
-  
-<div className="flex flex-wrap gap-2">
-  {[
-    "Delhi NCR",
-    "Gurgaon",
-    "Noida",
-    "Faridabad",
-    "Ghaziabad",
-    "Jaipur",
-    "Mumbai",
-    "Bangalore",
-    "Hyderabad",
-    "Pune",
-    "Chandigarh",
-    "Pan India",
-  ].map((tag, index) => (
-    <span
-      key={index}
-      className="px-3 py-1.5 text-xs rounded-full bg-blue-600/20 border border-blue-500/30 text-blue-200"
-    >
-      {tag}
-    </span>
-  ))}
-</div>
+        {activeTab === "location" && (
+          <div className="hidden lg:block mb-12">
+            <h3 className="text-2xl font-bold mb-6">
+              Our Locations
+            </h3>
 
-  </div>
-)}
+            <div className="flex flex-wrap gap-2">
+              {[
+                "Delhi NCR",
+                "Gurgaon",
+                "Noida",
+                "Faridabad",
+                "Ghaziabad",
+                "Jaipur",
+                "Mumbai",
+                "Bangalore",
+                "Hyderabad",
+                "Pune",
+                "Chandigarh",
+                "Pan India",
+              ].map((tag, index) => (
+                <span
+                  key={index}
+                  className="px-3 py-1.5 text-xs rounded-full bg-blue-600/20 border border-blue-500/30 text-blue-200"
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
+
+          </div>
+        )}
 
 
         {/* MOBILE COMPANY INFO */}
@@ -561,7 +557,7 @@ export const Footer = memo(function Footer() {
             {companyInfo.gst}
           </p>
         </div>
-    
+
         {/* MOBILE COLLAPSIBLE */}
         <FooterCollapsible
           sections={[
@@ -669,7 +665,7 @@ export const Footer = memo(function Footer() {
           </details>
         </div>
 
-                {/* MOBILE TAGS */}
+        {/* MOBILE TAGS */}
         <div className="lg:hidden mb-8">
           <details className="group border-b border-white/10">
             <summary className="flex items-center justify-between py-3 cursor-pointer list-none">
@@ -698,55 +694,56 @@ export const Footer = memo(function Footer() {
 
 
         {/* ANIMATED TITLE */}
-<div className="border-t border-white/10 pt-8">
+        <div className="border-t border-white/10 pt-8">
 
-  {/* Team Members */}
-  <div className="flex lg:justify-between lg:mx-70  mb-3 justify-around gap-4">
-    
-    {[
-      "SAHIL BHATIA",
-      "AMI CHAUHAN",
-      "ANU CHAUHAN",
-      "GAURAV BHATIA",
-    ].map((member, index) => (
-      <div
-        key={index}
-        className="
-          text-xs
-          lg:text-sm
+          {/* Team Members */}
+          <div className="flex lg:justify-between lg:mx-70  mb-3 justify-around gap-4  ">
+
+            {[
+              "SAHIL BHATIA",
+              "AMI CHAUHAN",
+              "ANU CHAUHAN",
+              "GAURAV BHATIA",
+            ].map((member, index) => (
+              <div
+                key={index}
+                className="
+         text-xs
+          md:text-sm
           font-medium
           tracking-wide
           text-gray-200
           backdrop-blur-sm
           transition-all
+          align-center
         "
-      >
-        {member}
-      </div>
-    ))}
-  </div>
+              >
+                {member}
+              </div>
+            ))}
+          </div>
 
-  {/* Animated Website Name */}
-  <motion.h1
-    className="text-3xl lg:text-7xl font-bold text-[#c1a758] text-center flex justify-center flex-wrap"
-    variants={containerVariants}
-    initial="hidden"
-    whileInView="visible"
-    viewport={{
-      once: true,
-    }}
-  >
-    {"WEBESIDE TECHNOLOGY".split("").map((char, index) => (
-      <motion.span
-        key={index}
-        variants={letterVariants}
-        className="inline-block"
-      >
-        {char === " " ? "\u00A0" : char}
-      </motion.span>
-    ))}
-  </motion.h1>
-</div>
+          {/* Animated Website Name */}
+          <motion.h1
+            className="md:text-3xl lg:text-7xl font-bold text-[#c1a758] text-center flex justify-center align-center text-2xl"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{
+              once: true,
+            }}
+          >
+            {"WEBESIDE TECHNOLOGY".split("").map((char, index) => (
+              <motion.span
+                key={index}
+                variants={letterVariants}
+                className="inline-block"
+              >
+                {char === " " ? "\u00A0" : char}
+              </motion.span>
+            ))}
+          </motion.h1>
+        </div>
 
         {/* BOTTOM BAR */}
         <div className="border-t border-white/10 pt-8 mt-8">

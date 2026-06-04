@@ -682,9 +682,9 @@ export default function Home() {
 
           {/* Bottom Button */}
           <div className="text-center mt-8">
-            <Button asChild size="lg" className="rounded-full px-8">
+            <Button asChild size="lg" className="rounded-full px-8 mx-auto">
               <Link href="/services">
-               Let's View All {category.name} Services{" "}
+                View All {category.name} Services{" "}
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Link>
             </Button>
