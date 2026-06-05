@@ -81,7 +81,7 @@ export function HeroSection({
       {/* Background */}
       <div className="absolute inset-0" />
 
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="container mx-auto">
 
         <div className="grid lg:grid-cols-2 gap-10 items-center">
 
@@ -95,8 +95,9 @@ export function HeroSection({
               <Sparkles className="w-4 h-4 mr-2" />
               Trusted by 150+ Businesses
             </Badge>
+            <br />
 
-            <h1 className="text-4xl lg:text-6xl font-bold leading-tight text-[#9c6c1f] px-4 py-3 rounded-lg inline-block">
+            <h1 className="text-4xl lg:text-6xl font-bold leading-tight text-[#9c6c1f] py-3 rounded-lg inline-block">
               {title}{" "}
               <span className="text-[#1f0159]">
                 {titleHighlight}
@@ -164,9 +165,7 @@ export function HeroSection({
                     key={index}
                     className="relative w-[220px] h-[410px] rounded-3xl overflow-hidden flex-shrink-0 bg-background golden-hover cursor-golden"
                     style={{
-                      boxShadow:
-                        "0 20px 60px rgba(0,0,0,0.35), 0 8px 24px rgba(0,0,0,0.20), 0 2px 8px rgba(0,0,0,0.12)",
-                      border: "1.5px solid rgba(255,255,255,0.18)",
+                      border: "1px solid rgba(255,255,255,0.18)",
                     }}
                   >
 

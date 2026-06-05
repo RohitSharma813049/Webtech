@@ -175,15 +175,15 @@ export function Header() {
       {/* HEADER */}
       <header className="sticky top-0 z-100 w-full transition-all duration-300 ">
         <div
-          className={` mx-auto border border-border mt-5 rounded-xl shadow-lg transition-all duration-300 ${isScrolled
+          className={` mx-auto border border-border mt-5  shadow-lg transition-all duration-300 ${isScrolled
             ? "backdrop-blur-sm bg-background/80 w-screen"
-            : "bg-transparent w-[85%]"
+            : "bg-transparent w-[85%] rounded-xl"
             }`}
         >
 
           {/* HEADER CONTAINER */}
           <div className="grid grid-cols-[1fr_auto_1fr] items-center h-20 justify-around">
-      
+
             {/* LEFT SIDE */}
             <div className="flex items-center justify-around">
 
@@ -210,27 +210,18 @@ export function Header() {
                     }
                     onMouseLeave={() => setActiveMenu(null)}
                   >
-<Link
-  href={link.href}
-  className={`relative flex items-center gap-1 py-6 whitespace-nowrap transition-colors duration-300 ${
-    isScrolled
-      ? "lg:text-foreground hover:text-primary"
-      : "lg:text-amber-50 hover:text-white"
-  }`}
->
-  {link.name}
+                    <Link
+                      href={link.href}
+                      className={`relative flex items-center gap-1 py-6 whitespace-nowrap transition-colors duration-300 
+      lg:text-foreground hover:text-primary`}
+                    >
+                      {link.name}
 
-  {link.hasMega && (
-    <ChevronDown className="w-4 h-4" />
-  )}
+                      {link.hasMega && (
+                        <ChevronDown className="w-4 h-4" />
+                      )}
 
-  {/* Underline */}
-  <span
-    className={`absolute left-0 bottom-0 h-0.5 w-0 group-hover:w-full transition-all duration-300 ${
-      isScrolled ? "bg-primary" : "bg-white"
-    }`}
-  ></span>
-</Link>
+                    </Link>
 
                     {/* SERVICES MEGA MENU */}
                     {link.name === "Services" &&
@@ -420,18 +411,18 @@ export function Header() {
               </div>
 
               {/* MOBILE SPACE */}
-                  <div className="lg:hidden relative group/leftlogo">
-                  <Link href="/" className="flex items-center gap-1 font-extrabold text-yellow-500 text-xs tracking-wide drop-shadow-[0_0_8px_rgba(234,179,8,0.7)] transition-all duration-300 hover:scale-105 hover:text-amber-400">
-                    <span className="inline-block transition-transform duration-500">
-                      <i>WB</i>
-                    </span>
-                    <span>TECH</span>
-                    {/* Small sliding home icon */}
-                    <span className="w-0 overflow-hidden group-hover/leftlogo:w-5 transition-all duration-300 flex items-center justify-center">
-                      <HomeIcon className="w-4 h-4 text-amber-400 ml-1 opacity-0 group-hover/leftlogo:opacity-100 transition-opacity duration-300" />
-                    </span>
-                  </Link>
-                </div>
+              <div className="lg:hidden relative group/leftlogo">
+                <Link href="/" className="flex items-center gap-1 font-extrabold text-yellow-500 text-xs tracking-wide drop-shadow-[0_0_8px_rgba(234,179,8,0.7)] transition-all duration-300 hover:scale-105 hover:text-amber-400">
+                  <span className="inline-block transition-transform duration-500">
+                    <i>WB</i>
+                  </span>
+                  <span>TECH</span>
+                  {/* Small sliding home icon */}
+                  <span className="w-0 overflow-hidden group-hover/leftlogo:w-5 transition-all duration-300 flex items-center justify-center">
+                    <HomeIcon className="w-4 h-4 text-amber-400 ml-1 opacity-0 group-hover/leftlogo:opacity-100 transition-opacity duration-300" />
+                  </span>
+                </Link>
+              </div>
             </div>
 
             {/* CENTER LOGO */}
@@ -497,145 +488,124 @@ export function Header() {
             {/* RIGHT SIDE */}
             <div className="flex items-center lg:justify-around justify-around">
 
-{/* DESKTOP RIGHT NAV */}
-<div className="hidden xl:flex items-center gap-5 2xl:gap-7">
-  
-  {/* ABOUT */}
-  <Link
-    href={"/about"}
-    className={`relative flex items-center gap-1 py-6 whitespace-nowrap transition-colors duration-300 ${
-      isScrolled
-        ? "lg:text-foreground hover:text-primary"
-        : "lg:text-amber-50 hover:text-white"
-    }`}
-  >
-    About Us
+              {/* DESKTOP RIGHT NAV */}
+              <div className="hidden xl:flex items-center gap-5 2xl:gap-7">
 
-    <span
-      className={`absolute left-0 bottom-0 w-0 h-0.5 group-hover:w-full transition-all duration-300 ${
-        isScrolled ? "bg-primary" : "bg-white"
-      }`}
-    ></span>
-  </Link>
+                {/* ABOUT */}
+                <Link
+                  href={"/about"}
+                  className={`relative flex items-center gap-1 py-6 whitespace-nowrap transition-colors duration-300 lg:text-foreground hover:text-primary
+                 `}
+                >
+                  About Us
 
-  {/* REFERRAL */}
-  <Link
-    href={"/referral"}
-    className={`relative flex items-center gap-1 py-6 whitespace-nowrap transition-colors duration-300 ${
-      isScrolled
-        ? "lg:text-foreground hover:text-primary"
-        : "lg:text-amber-50 hover:text-white"
-    }`}
-  >
-    Refer us
+                </Link>
 
-    <span
-      className={`absolute left-0 bottom-0 w-0 h-0.5 group-hover:w-full transition-all duration-300 ${
-        isScrolled ? "bg-primary" : "bg-white"
-      }`}
-    ></span>
-  </Link>
+                {/* REFERRAL */}
+                <Link
+                  href={"/referral"}
+                  className={`relative flex items-center gap-1 py-6 whitespace-nowrap transition-colors duration-300 lg:text-foreground hover:text-primary
+                 `}
+                >
+                  Refer us
 
-  {/* WB TECH INFO */}
-  <div
-    className="relative group"
-    onMouseEnter={() => setActiveMenu("WB Tech Info")}
-    onMouseLeave={() => setActiveMenu(null)}
-  >
-    <button
-      className={`text-sm 2xl:text-base transition-colors duration-300 flex items-center gap-1 py-6 whitespace-nowrap ${
-        isScrolled
-          ? "lg:text-foreground hover:text-primary"
-          : "lg:text-amber-50 hover:text-white"
-      }`}
-    >
-      WB Tech Insights
+                  <span
+                    className={`absolute left-0 bottom-0 w-0 h-0.5 group-hover:w-full transition-all duration-300 bg-primary"
+                      }`}
+                  ></span>
+                </Link>
 
-      <ChevronDown className="w-4 h-4" />
-    </button>
+                {/* WB TECH INFO */}
+                <div
+                  className="relative group"
+                  onMouseEnter={() => setActiveMenu("WB Tech Info")}
+                  onMouseLeave={() => setActiveMenu(null)}
+                >
+                  <button
+                    className={`text-sm 2xl:text-base transition-colors duration-300 flex items-center gap-1 py-6 whitespace-nowrap lg:text-foreground hover:text-primary
+                   `}
+                  >
+                    WB Tech Insights
 
-    {activeMenu === "WB Tech Info" && (
-      <div
-        className={`fixed center w-52 bg-card border border-border rounded-xl shadow-2xl p-4 z-[999] animate-in fade-in zoom-in-95 duration-200 ${
-          isScrolled ? "top-20" : "top-[110px]"
-        }`}
-      >
-        <h4 className="font-bold mb-3 text-primary text-base">
-          Company Info
-        </h4>
+                    <ChevronDown className="w-4 h-4" />
+                  </button>
 
-        <ul className="space-y-2">
-          {wbTechInfoLinks.map((link) => (
-            <li key={link.name}>
-              <Link
-                href={link.href}
-                className="block text-sm text-muted-foreground hover:text-primary transition-colors py-2 px-3 rounded-lg hover:bg-secondary"
-                onClick={() => setActiveMenu(null)}
-              >
-                {link.name}
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </div>
-    )}
-  </div>
+                  {activeMenu === "WB Tech Info" && (
+                    <div
+                      className={`fixed center w-52 bg-card border border-border rounded-xl shadow-2xl p-4 z-[999] animate-in fade-in zoom-in-95 duration-200 ${isScrolled ? "top-20" : "top-[110px]"
+                        }`}
+                    >
+                      <h4 className="font-bold mb-3 text-primary text-base">
+                        Company Info
+                      </h4>
 
-  {/* OUR BRANDS */}
-  <div
-    className="relative group"
-    onMouseEnter={() => setActiveMenu("Our Brands")}
-    onMouseLeave={() => setActiveMenu(null)}
-  >
-    <button
-      className={`text-sm 2xl:text-base transition-colors duration-300 flex items-center gap-1 py-6 whitespace-nowrap ${
-        isScrolled
-          ? "lg:text-foreground hover:text-primary"
-          : "lg:text-amber-50 hover:text-white"
-      }`}
-    >
-      Our Brands
+                      <ul className="space-y-2">
+                        {wbTechInfoLinks.map((link) => (
+                          <li key={link.name}>
+                            <Link
+                              href={link.href}
+                              className="block text-sm text-muted-foreground hover:text-primary transition-colors py-2 px-3 rounded-lg hover:bg-secondary"
+                              onClick={() => setActiveMenu(null)}
+                            >
+                              {link.name}
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+                </div>
 
-      <ChevronDown className="w-4 h-4" />
-    </button>
+                {/* OUR BRANDS */}
+                <div
+                  className="relative group"
+                  onMouseEnter={() => setActiveMenu("Our Brands")}
+                  onMouseLeave={() => setActiveMenu(null)}
+                >
+                  <button
+                    className={`text-sm 2xl:text-base transition-colors duration-300 flex items-center gap-1 py-6 whitespace-nowrap lg:text-foreground hover:text-primary`}
+                  >
+                    Our Brands
 
-    {activeMenu === "Our Brands" && (
-      <div
-        className={`fixed center w-64 bg-card border border-border rounded-xl p-4 shadow-2xl z-[999] animate-in fade-in zoom-in-95 duration-200 ${
-          isScrolled ? "top-20" : "top-[110px]"
-        }`}
-      >
-        <h4 className="font-bold mb-3 text-primary text-base">
-          Our Brands
-        </h4>
+                    <ChevronDown className="w-4 h-4" />
+                  </button>
 
-        <ul className="space-y-2">
-          {ourBrands.map((brand) => (
-            <li key={brand.name}>
-              <a
-                href={brand.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block text-sm text-muted-foreground hover:text-primary transition-colors py-2 px-3 rounded-lg hover:bg-secondary "
-              >
-                {brand.name} →
-              </a>
-            </li>
-          ))}
-        </ul>
-      </div>
-    )}
-  </div>
+                  {activeMenu === "Our Brands" && (
+                    <div
+                      className={`fixed center w-64 bg-card border border-border rounded-xl p-4 shadow-2xl z-[999] animate-in fade-in zoom-in-95 duration-200 ${isScrolled ? "top-20" : "top-[110px]"
+                        }`}
+                    >
+                      <h4 className="font-bold mb-3 text-primary text-base">
+                        Our Brands
+                      </h4>
 
-  {/* CTA */}
-  <EnquiryPopup
-    trigger={
-      <Button size="sm">
-        Lets talk
-      </Button>
-    }
-  />
-</div>
+                      <ul className="space-y-2">
+                        {ourBrands.map((brand) => (
+                          <li key={brand.name}>
+                            <a
+                              href={brand.href}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="block text-sm text-muted-foreground hover:text-primary transition-colors py-2 px-3 rounded-lg hover:bg-secondary "
+                            >
+                              {brand.name} →
+                            </a>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+                </div>
+
+                {/* CTA */}
+                <EnquiryPopup
+                  trigger={
+                    <Button size="sm">
+                      Lets talk
+                    </Button>
+                  }
+                />
+              </div>
 
               {/* MOBILE MENU BUTTON */}
               <div className="xl:hidden flex items-center ml-10">
@@ -769,21 +739,21 @@ export function Header() {
                   <span>Our Brands</span>
                 </button>
               </div>
-                <Link
-                  onClick={() => setIsOpen(false)}
-                  href="/referral"
-                  className="flex items-center justify-between w-full py-2 px-4 rounded-lg hover:bg-secondary transition-colors"
-                >
-                  <span>Refer us</span>
-                </Link>
+              <Link
+                onClick={() => setIsOpen(false)}
+                href="/referral"
+                className="flex items-center justify-between w-full py-2 px-4 rounded-lg hover:bg-secondary transition-colors"
+              >
+                <span>Refer us</span>
+              </Link>
 
-                <Link
-                  onClick={() => setIsOpen(false)}
-                  href="/about"
-                  className="flex items-center justify-between w-full py-2 px-4 rounded-lg hover:bg-secondary transition-colors"
-                >
-                  <span>About us</span>
-                </Link>
+              <Link
+                onClick={() => setIsOpen(false)}
+                href="/about"
+                className="flex items-center justify-between w-full py-2 px-4 rounded-lg hover:bg-secondary transition-colors"
+              >
+                <span>About us</span>
+              </Link>
 
               <EnquiryPopup
                 trigger={

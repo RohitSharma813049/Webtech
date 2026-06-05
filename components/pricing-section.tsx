@@ -5,6 +5,7 @@ import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Check, Sparkles, Settings } from "lucide-react"
 import { EnquiryPopup } from "@/components/enquiry-popup"
 import { SectionCarousel } from "@/components/section-carousel"
@@ -24,10 +25,14 @@ export function PricingSection({
   description = "Choose from our comprehensive service categories",
   badgeText = "Service Categories",
   data = pricingData,
-  defaultTab = "SEO Services",
+  defaultTab = "Integration Services",
   backgroundClass = "bg-background"
 }: PricingSectionProps) {
   const [selectedCategory, setSelectedCategory] = useState(defaultTab)
+  const [billingPeriod, setBillingPeriod] = useState<"1 Month" | "6 Months" | "1 Year">("1 Month")
+  
+  const currentPlans = data[selectedCategory] || []
+  const hasMultiplePrices = Object.values(data).some(plans => plans.some(plan => plan.prices))
 
   return (
     <section className={`py-20 ${backgroundClass}`}>
@@ -56,14 +61,31 @@ export function PricingSection({
               ))}
             </TabsList>
 
-            <EnquiryPopup
-              trigger={
-                <Button size="lg" variant="secondary" className="flex-shrink-0">
-                  <Settings className="w-5 h-5 mr-2" />
-                  Customise Your Plan
-                </Button>
-              }
-            />
+            <div className="flex flex-col sm:flex-row gap-4 items-center">
+              {hasMultiplePrices && (
+                <Select
+                  value={billingPeriod}
+                  onValueChange={(value: "1 Month" | "6 Months" | "1 Year") => setBillingPeriod(value)}
+                >
+                  <SelectTrigger className="w-[150px] bg-background">
+                    <SelectValue placeholder="Select billing period" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="1 Month">1 Month</SelectItem>
+                    <SelectItem value="6 Months">6 Months</SelectItem>
+                    <SelectItem value="1 Year">1 Year</SelectItem>
+                  </SelectContent>
+                </Select>
+              )}
+              <EnquiryPopup
+                trigger={
+                  <Button size="lg" variant="secondary" className="flex-shrink-0">
+                    <Settings className="w-5 h-5 mr-2" />
+                    Customise Your Plan
+                  </Button>
+                }
+              />
+            </div>
           </div>
 
           {Object.entries(data).map(([category, plans]) => (
@@ -87,8 +109,8 @@ export function PricingSection({
                     <CardHeader className="text-center pb-8 pt-8">
                       <CardTitle className="text-2xl mb-2">{plan.name}</CardTitle>
                       <div className="mb-4">
-                        <span className="text-4xl font-bold">{plan.price}</span>
-                        <span className="text-muted-foreground">{plan.period}</span>
+                        <span className="text-4xl font-bold">{plan.prices ? plan.prices[billingPeriod] : plan.price}</span>
+                        <span className="text-muted-foreground">{plan.prices ? (billingPeriod === "1 Month" ? "/month" : billingPeriod === "6 Months" ? "/6 months" : "/year") : plan.period}</span>
                       </div>
                       <p className="text-sm text-muted-foreground">{plan.description}</p>
                     </CardHeader>
@@ -101,6 +123,11 @@ export function PricingSection({
                           </li>
                         ))}
                       </ul>
+                      {plan.note && (
+                        <p className="text-xs text-muted-foreground italic border-t pt-4 mt-4">
+                          * {plan.note}
+                        </p>
+                      )}
                       <Button
                         className="w-full"
                         size="lg"
@@ -134,8 +161,8 @@ export function PricingSection({
                       <CardHeader className="text-center pb-8 pt-8">
                         <CardTitle className="text-2xl mb-2">{plan.name}</CardTitle>
                         <div className="mb-4">
-                          <span className="text-4xl font-bold">{plan.price}</span>
-                          <span className="text-muted-foreground">{plan.period}</span>
+                          <span className="text-4xl font-bold">{plan.prices ? plan.prices[billingPeriod] : plan.price}</span>
+                          <span className="text-muted-foreground">{plan.prices ? (billingPeriod === "1 Month" ? "/month" : billingPeriod === "6 Months" ? "/6 months" : "/year") : plan.period}</span>
                         </div>
                         <p className="text-sm text-muted-foreground">{plan.description}</p>
                       </CardHeader>
@@ -148,6 +175,11 @@ export function PricingSection({
                             </li>
                           ))}
                         </ul>
+                        {plan.note && (
+                          <p className="text-xs text-muted-foreground italic border-t pt-4 mt-4">
+                            * {plan.note}
+                          </p>
+                        )}
                         <Button
                           className="w-full"
                           size="lg"

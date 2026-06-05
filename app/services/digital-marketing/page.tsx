@@ -41,7 +41,7 @@ import {
   Layers3,
   Compass,
   Linkedin,
-    Search,
+  Search,
   BarChart3,
   Bird
 } from "lucide-react"
@@ -89,7 +89,7 @@ export default function DigitalMarketingPage() {
 
   return (
     <div className="min-h-screen">
-     
+
       <DiscountPopup serviceType="digital-marketing" />
 
       <HeroSection
@@ -97,122 +97,122 @@ export default function DigitalMarketingPage() {
         titleHighlight="Excellence"
         description="Drive growth, engagement, and ROI with comprehensive digital marketing strategies tailored to your business goals. From SEO to social media, we've got you covered."
         primaryCTA={{ label: "View Our Work", href: "/portfolio" }}
-        secondaryCTA={{ label: "Get Free Consultation",  type: "enquiry", }}
+        secondaryCTA={{ label: "Get Free Consultation", type: "enquiry", }}
         showImages={true}
-          imagesData={[
-    {
-      src: "/image/images/hero-sections/webeside-technology-banner-web-development.webp",
-      alt: "Web Development",
-      label: "Web Development",
-    },
-    {
-      src: "/image/images/hero-sections/webeside-technology-banner-digital-marketing.webp",
-      alt: "Digital Marketing",
-      label: "Digital Marketing",
-    },
-    {
-      src: "/image/images/hero-sections/webeside-technology-banner-seo-services.webp",
-      alt: "SEO Services",
-      label: "SEO Services",
-    },
-    {
-      src: "/image/images/hero-sections/webeside-technology-banner-ecommerce.webp",
-      alt: "E-Commerce",
-      label: "E-Commerce",
-    },
-    {
-      src: "/image/images/hero-sections/webeside-technology-banner-mobile-app.webp",
-      alt: "Mobile App Development",
-      label: "Mobile Apps",
-    },
+        imagesData={[
+          {
+            src: "/image/images/hero-sections/webeside-technology-banner-web-development.webp",
+            alt: "Web Development",
+            label: "Web Development",
+          },
+          {
+            src: "/image/images/hero-sections/webeside-technology-banner-digital-marketing.webp",
+            alt: "Digital Marketing",
+            label: "Digital Marketing",
+          },
+          {
+            src: "/image/images/hero-sections/webeside-technology-banner-seo-services.webp",
+            alt: "SEO Services",
+            label: "SEO Services",
+          },
+          {
+            src: "/image/images/hero-sections/webeside-technology-banner-ecommerce.webp",
+            alt: "E-Commerce",
+            label: "E-Commerce",
+          },
+          {
+            src: "/image/images/hero-sections/webeside-technology-banner-mobile-app.webp",
+            alt: "Mobile App Development",
+            label: "Mobile Apps",
+          },
 
-  ]}
+        ]}
       />
-   
-   
+
+
       {/* Services Section */}
-<section className="py-24 bg-background">
-  <div className="container mx-auto px-4">
+      <section className="py-24 bg-background">
+        <div className="container mx-auto px-4">
 
-    {/* Heading */}
-    <div className="text-center mb-16">
-      <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
-        Our Digital Marketing Services
-      </h2>
+          {/* Heading */}
+          <div className="text-center mb-16">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
+              Our Digital Marketing Services
+            </h2>
 
-      <p className="text-base sm:text-lg text-muted-foreground max-w-3xl mx-auto">
-        From SEO to social media, we cover all aspects of digital marketing
-      </p>
-    </div>
+            <p className="text-base sm:text-lg text-muted-foreground max-w-3xl mx-auto">
+              From SEO to social media, we cover all aspects of digital marketing
+            </p>
+          </div>
 
-    {/* Responsive Grid/Slider */}
-    {category?.services && (
-      <SectionCarousel
-        items={category.services}
-        itemClassName="flex-shrink-0 w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)]"
-        renderItem={(service) => (
-          <Card className="h-full flex flex-col group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-2 hover:border-primary/50 overflow-hidden">
-            {/* IMAGE */}
-            <div className="relative w-full aspect-[16/9] overflow-hidden">
-              <Image
-                src={
-                  service.image ||
-                  "/seo-analytics-dashboard.webp?height=192&width=391&query=digital marketing service"
-                }
-                alt={service.title}
-                fill
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                className="object-contain bg-muted/20 w-full h-full group-hover:scale-110 transition-transform duration-500"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
-              <h3 className="absolute bottom-4 left-4 right-4 text-white text-xl font-bold line-clamp-2">
-                {service.title}
-              </h3>
-            </div>
-            {/* CONTENT */}
-            <CardContent className="p-6 flex-1 flex flex-col">
-              <p className="text-sm text-muted-foreground mb-4 line-clamp-3 leading-relaxed">
-                {service.description}
-              </p>
-              <div className="space-y-2 mb-6 flex-1">
-                {service.features.slice(0, 4).map((feature, idx) => (
-                  <div key={idx} className="flex items-start gap-2 text-sm">
-                    <CheckCircle2 className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
-                    <span>{feature}</span>
+          {/* Responsive Grid/Slider */}
+          {category?.services && (
+            <SectionCarousel
+              items={category.services}
+              itemClassName="flex-shrink-0 w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)]"
+              renderItem={(service) => (
+                <Card className="h-full flex flex-col group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-2 hover:border-primary/50 overflow-hidden">
+                  {/* IMAGE */}
+                  <div className="relative w-full aspect-[16/9] overflow-hidden">
+                    <Image
+                      src={
+                        service.image ||
+                        "/seo-analytics-dashboard.webp?height=192&width=391&query=digital marketing service"
+                      }
+                      alt={service.title}
+                      fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      className="object-contain bg-muted/20 w-full h-full group-hover:scale-110 transition-transform duration-500"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+                    <h3 className="absolute bottom-4 left-4 right-4 text-white text-xl font-bold line-clamp-2">
+                      {service.title}
+                    </h3>
                   </div>
-                ))}
-              </div>
-              <div className="flex gap-2 mt-auto">
-                <EnquiryPopup
-                  preselectedCategory="Digital Marketing"
-                  preselectedService={service.title}
-                  trigger={
-                    <Button size="sm" className="flex-1">
-                      <MessageCircle className="w-4 h-4 mr-2" />
-                      Enquiry
-                    </Button>
-                  }
-                />
-                <Button
-                  size="sm"
-                  variant="outline"
-                  className="flex-1 bg-transparent"
-                  asChild
-                >
-                  <a href="tel:+918860876087">
-                    <Phone className="w-4 h-4 mr-2" />
-                    Call
-                  </a>
-                </Button>
-              </div>
-            </CardContent>
-          </Card>
-        )}
-      />
-    )}
+                  {/* CONTENT */}
+                  <CardContent className="p-6 flex-1 flex flex-col">
+                    <p className="text-sm text-muted-foreground mb-4 line-clamp-3 leading-relaxed">
+                      {service.description}
+                    </p>
+                    <div className="space-y-2 mb-6 flex-1">
+                      {service.features.slice(0, 4).map((feature, idx) => (
+                        <div key={idx} className="flex items-start gap-2 text-sm">
+                          <CheckCircle2 className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
+                          <span>{feature}</span>
+                        </div>
+                      ))}
+                    </div>
+                    <div className="flex gap-2 mt-auto">
+                      <EnquiryPopup
+                        preselectedCategory="Digital Marketing"
+                        preselectedService={service.title}
+                        trigger={
+                          <Button size="sm" className="flex-1">
+                            <MessageCircle className="w-4 h-4 mr-2" />
+                            Enquiry
+                          </Button>
+                        }
+                      />
+                      <Button
+                        size="sm"
+                        variant="outline"
+                        className="flex-1 bg-transparent"
+                        asChild
+                      >
+                        <a href="tel:+918860876087">
+                          <Phone className="w-4 h-4 mr-2" />
+                          Call
+                        </a>
+                      </Button>
+                    </div>
+                  </CardContent>
+                </Card>
+              )}
+            />
+          )}
 
-  </div>
-</section>
+        </div>
+      </section>
 
       {/* Why Choose Our Digital Marketing */}
       <section className="py-24 bg-gradient-to-b from-secondary/20 to-background">
@@ -268,59 +268,26 @@ export default function DigitalMarketingPage() {
       </section>
 
       {/* Marketing Process Section */}
-  <section className="py-16 lg:py-24 bg-background">
-  <div className="container mx-auto px-4">
+      <section className="py-16 lg:py-24 bg-background">
+        <div className="container mx-auto px-4">
 
-    {/* Heading */}
-    <div className="text-center mb-12 lg:mb-16">
-       <Badge className="mb-4 px-4 py-2 text-[var(--chart-4)]" variant="secondary">
-        Our Approach
-      </Badge>
+          {/* Heading */}
+          <div className="text-center mb-12 lg:mb-16">
+            <Badge className="mb-4 px-4 py-2 text-[var(--chart-4)]" variant="secondary">
+              Our Approach
+            </Badge>
 
-      <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
-        Digital Marketing Process
-      </h2>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
+              Digital Marketing Process
+            </h2>
 
-      <p className="text-base sm:text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-        Strategic approach to maximize your digital marketing ROI
-      </p>
-    </div>
+            <p className="text-base sm:text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+              Strategic approach to maximize your digital marketing ROI
+            </p>
+          </div>
 
-    {/* Process Data */}
-    {[
-      {
-        step: "01",
-        title: "Research & Analysis",
-        description:
-          "Deep dive into your market, competitors, and audience behavior.",
-        icon: Search,
-      },
-      {
-        step: "02",
-        title: "Strategy Development",
-        description:
-          "Creating customized marketing strategies aligned with your goals.",
-        icon: BarChart3,
-      },
-      {
-        step: "03",
-        title: "Campaign Execution",
-        description:
-          "Implementing campaigns across multiple digital channels.",
-        icon: Rocket,
-      },
-      {
-        step: "04",
-        title: "Monitor & Optimize",
-        description:
-          "Continuous tracking and optimization for better performance.",
-        icon: TrendingUp,
-      },
-    ].length > 0 && (
-      <>
-
-        <SectionCarousel
-          items={[
+          {/* Process Data */}
+          {[
             {
               step: "01",
               title: "Research & Analysis",
@@ -349,87 +316,120 @@ export default function DigitalMarketingPage() {
                 "Continuous tracking and optimization for better performance.",
               icon: TrendingUp,
             },
-          ]}
-          itemClassName="flex-shrink-0 w-full sm:w-[calc(50%-12px)] lg:w-[calc(25%-18px)]"
-          renderItem={(item) => (
-            <div className="relative h-full flex flex-col rounded-3xl border bg-gradient-to-br from-card to-secondary/20 p-6 lg:p-8 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 overflow-hidden">
-              {/* Background Step */}
-              <div className="absolute top-4 right-4 text-5xl lg:text-6xl font-bold text-primary/10">
-                {item.step}
-              </div>
-              {/* Icon */}
-              <div className="w-14 h-14 lg:w-16 lg:h-16 rounded-2xl bg-gradient-to-br from-primary to-accent flex items-center justify-center shadow-lg mb-5 lg:mb-6">
-                <item.icon className="w-7 h-7 lg:w-8 lg:h-8 text-white" />
-              </div>
-              {/* Title */}
-              <h3 className="text-lg lg:text-xl font-bold mb-3 group-hover:text-primary transition-colors">
-                {item.title}
-              </h3>
-              {/* Description */}
-              <p className="text-sm lg:text-base text-muted-foreground leading-relaxed mt-auto">
-                {item.description}
-              </p>
-            </div>
-          )}
-        />
+          ].length > 0 && (
+              <>
 
-      </>
-    )}
+                <SectionCarousel
+                  items={[
+                    {
+                      step: "01",
+                      title: "Research & Analysis",
+                      description:
+                        "Deep dive into your market, competitors, and audience behavior.",
+                      icon: Search,
+                    },
+                    {
+                      step: "02",
+                      title: "Strategy Development",
+                      description:
+                        "Creating customized marketing strategies aligned with your goals.",
+                      icon: BarChart3,
+                    },
+                    {
+                      step: "03",
+                      title: "Campaign Execution",
+                      description:
+                        "Implementing campaigns across multiple digital channels.",
+                      icon: Rocket,
+                    },
+                    {
+                      step: "04",
+                      title: "Monitor & Optimize",
+                      description:
+                        "Continuous tracking and optimization for better performance.",
+                      icon: TrendingUp,
+                    },
+                  ]}
+                  itemClassName="flex-shrink-0 w-full sm:w-[calc(50%-12px)] lg:w-[calc(25%-18px)]"
+                  renderItem={(item) => (
+                    <div className="relative h-full flex flex-col rounded-3xl border bg-gradient-to-br from-card to-secondary/20 p-6 lg:p-8 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 overflow-hidden">
+                      {/* Background Step */}
+                      <div className="absolute top-4 right-4 text-5xl lg:text-6xl font-bold text-primary/10">
+                        {item.step}
+                      </div>
+                      {/* Icon */}
+                      <div className="w-14 h-14 lg:w-16 lg:h-16 rounded-2xl bg-gradient-to-br from-primary to-accent flex items-center justify-center shadow-lg mb-5 lg:mb-6">
+                        <item.icon className="w-7 h-7 lg:w-8 lg:h-8 text-white" />
+                      </div>
+                      {/* Title */}
+                      <h3 className="text-lg lg:text-xl font-bold mb-3 group-hover:text-primary transition-colors">
+                        {item.title}
+                      </h3>
+                      {/* Description */}
+                      <p className="text-sm lg:text-base text-muted-foreground leading-relaxed mt-auto">
+                        {item.description}
+                      </p>
+                    </div>
+                  )}
+                />
 
-  </div>
-</section>
+              </>
+            )}
+
+        </div>
+      </section>
 
       {/* Marketing Tools & Platforms Section */}
-<section className="py-16 lg:py-24 bg-gradient-to-b from-secondary/20 to-background">
-  <div className="container mx-auto px-4">
+      <section className="py-16 lg:py-24 bg-gradient-to-b from-secondary/20 to-background">
+        <div className="container mx-auto px-4">
 
-    {/* Heading */}
-    <div className="text-center mb-12 lg:mb-16">
-       <Badge className="mb-4 px-4 py-2 text-[var(--chart-4)]" variant="secondary">
-        Tools & Platforms
-      </Badge>
+          {/* Heading */}
+          <div className="text-center mb-12 lg:mb-16">
+            <Badge className="mb-4 px-4 py-2 text-[var(--chart-4)]" variant="secondary">
+              Tools & Platforms
+            </Badge>
 
-      <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
-        Marketing Tools We Use
-      </h2>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
+              Marketing Tools We Use
+            </h2>
 
-      <p className="text-base sm:text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-        Industry-leading platforms for comprehensive digital marketing
-      </p>
-    </div>
-
-    <SectionCarousel
-      items={[
-        { name: "Google Ads", icon: Chrome, color: "from-blue-500 to-green-500" },
-        { name: "Meta Ads", icon: Facebook, color: "from-blue-600 to-cyan-500" },
-        { name: "Google Analytics", icon: BarChart3, color: "from-orange-500 to-yellow-500" },
-        { name: "SEMrush", icon: Search, color: "from-orange-600 to-red-500" },
-        { name: "Mailchimp", icon: Mail, color: "from-yellow-400 to-orange-400" },
-        { name: "Hootsuite", icon: Bird, color: "from-slate-700 to-slate-900" },
-        { name: "Canva", icon: Palette, color: "from-cyan-500 to-blue-500" },
-        { name: "Ahrefs", icon: LineChart, color: "from-indigo-500 to-blue-700" },
-        { name: "HubSpot", icon: Network, color: "from-orange-500 to-amber-500" },
-        { name: "Buffer", icon: Layers3, color: "from-sky-500 to-blue-500" },
-        { name: "Moz", icon: Compass, color: "from-teal-500 to-emerald-500" },
-        { name: "LinkedIn Ads", icon: Linkedin, color: "from-blue-700 to-sky-500" },
-      ]}
-      itemClassName="flex-shrink-0 w-[calc(50%-8px)] sm:w-[calc(33.333%-16px)] lg:w-[calc(16.666%-20px)]"
-      renderItem={(tool) => (
-        <Card className="group h-full border bg-card/80 backdrop-blur-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-2 hover:border-primary/40">
-          <CardContent className="flex flex-col items-center justify-center p-6 text-center h-full">
-            <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${tool.color} flex items-center justify-center shadow-lg mb-4`}>
-              <tool.icon className="w-8 h-8 text-white" />
-            </div>
-            <p className="font-semibold text-sm group-hover:text-primary transition-colors">
-              {tool.name}
+            <p className="text-base sm:text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+              Industry-leading platforms for comprehensive digital marketing
             </p>
-          </CardContent>
-        </Card>
-      )}
-    />
+          </div>
 
-  </div>
-</section>
+          <SectionCarousel
+            items={[
+              { name: "Google Ads", icon: Chrome, color: "from-blue-500 to-green-500" },
+              { name: "Meta Ads", icon: Facebook, color: "from-blue-600 to-cyan-500" },
+              { name: "Google Analytics", icon: BarChart3, color: "from-orange-500 to-yellow-500" },
+              { name: "SEMrush", icon: Search, color: "from-orange-600 to-red-500" },
+              { name: "Mailchimp", icon: Mail, color: "from-yellow-400 to-orange-400" },
+              { name: "Hootsuite", icon: Bird, color: "from-slate-700 to-slate-900" },
+              { name: "Canva", icon: Palette, color: "from-cyan-500 to-blue-500" },
+              { name: "Ahrefs", icon: LineChart, color: "from-indigo-500 to-blue-700" },
+              { name: "HubSpot", icon: Network, color: "from-orange-500 to-amber-500" },
+              { name: "Buffer", icon: Layers3, color: "from-sky-500 to-blue-500" },
+              { name: "Moz", icon: Compass, color: "from-teal-500 to-emerald-500" },
+              { name: "LinkedIn Ads", icon: Linkedin, color: "from-blue-700 to-sky-500" },
+            ]}
+            itemClassName="flex-shrink-0 w-[calc(50%-8px)] sm:w-[calc(33.333%-16px)] lg:w-[calc(16.666%-20px)]"
+            renderItem={(tool) => (
+              <Card className="group h-full border bg-card/80 backdrop-blur-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-2 hover:border-primary/40">
+                <CardContent className="flex flex-col items-center justify-center p-6 text-center h-full">
+                  <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${tool.color} flex items-center justify-center shadow-lg mb-4`}>
+                    <tool.icon className="w-8 h-8 text-white" />
+                  </div>
+                  <p className="font-semibold text-sm group-hover:text-primary transition-colors">
+                    {tool.name}
+                  </p>
+                </CardContent>
+              </Card>
+            )}
+          />
+
+        </div>
+      </section>
 
 
 
@@ -661,205 +661,203 @@ export default function DigitalMarketingPage() {
       </section> */}
 
       {/* Testimonials */}
-<section className="py-16 lg:py-24 bg-gradient-to-b from-secondary/20 to-background">
-  <div className="container mx-auto px-4">
+      <section className="py-16 lg:py-24 bg-gradient-to-b from-secondary/20 to-background">
+        <div className="container mx-auto px-4">
 
-    {/* Heading */}
-    <div className="text-center mb-12 lg:mb-16">
-       <Badge className="mb-4 px-4 py-2 text-[var(--chart-4)]" variant="secondary">
-        <Users className="w-4 h-4 mr-2" />
-        Client Success
-      </Badge>
+          {/* Heading */}
+          <div className="text-center mb-12 lg:mb-16">
+            <Badge className="mb-4 px-4 py-2 text-[var(--chart-4)]" variant="secondary">
+              <Users className="w-4 h-4 mr-2" />
+              Client Success
+            </Badge>
 
-      <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
-        What Our Clients Say
-      </h2>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
+              What Our Clients Say
+            </h2>
 
-      <p className="text-base sm:text-lg text-muted-foreground max-w-3xl mx-auto">
-        Real results from businesses we've helped grow
-      </p>
-    </div>
-
-    <SectionCarousel
-      items={[
-        {
-          name: "Rajesh Kumar",
-          role: "CEO, TechStart India",
-          content: "Their SEO strategies increased our organic traffic by 300% in just 6 months!",
-          rating: 5,
-        },
-        {
-          name: "Priya Sharma",
-          role: "Marketing Head, Fashion Hub",
-          content: "Social media campaigns delivered exceptional ROI. Highly recommended!",
-          rating: 5,
-        },
-        {
-          name: "Amit Patel",
-          role: "Owner, Local Restaurant",
-          content: "Google My Business optimization brought 10x more customers to our restaurant.",
-          rating: 5,
-        },
-      ]}
-      itemClassName="flex-shrink-0 w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)]"
-      renderItem={(testimonial) => (
-        <Card className="group h-full border hover:border-primary/40 hover:shadow-xl transition-all duration-300">
-          <CardContent className="flex flex-col p-6 h-full">
-            {/* Stars */}
-            <div className="flex gap-1 mb-4">
-              {[...Array(testimonial.rating)].map((_, i) => (
-                <Star
-                  key={i}
-                  className="w-4 h-4 text-yellow-500 fill-yellow-500"
-                />
-              ))}
-            </div>
-            {/* Content */}
-            <p className="text-sm lg:text-base text-muted-foreground mb-6 leading-relaxed flex-1">
-              "{testimonial.content}"
+            <p className="text-base sm:text-lg text-muted-foreground max-w-3xl mx-auto">
+              Real results from businesses we've helped grow
             </p>
-            {/* Client Info with Initial Logo */}
-            <div className="flex items-center gap-3 pt-4 border-t">
-              {/* Initial Avatar */}
-              <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center text-white font-bold text-lg shadow-md">
-                {testimonial.name.charAt(0).toUpperCase()}
-              </div>
-              {/* Name + Role */}
-              <div>
-                <p className="font-bold">{testimonial.name}</p>
-                <p className="text-sm text-muted-foreground">
-                  {testimonial.role}
-                </p>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
-      )}
-    />
+          </div>
 
-  </div>
-</section>
+          <SectionCarousel
+            items={[
+              {
+                name: "Mr Tarun",
+                role: "CEO, TechStart India",
+                content: "Their SEO strategies increased our organic traffic by 300% in just 6 months!",
+                rating: 5,
+              },
+              {
+                name: "Priya Sharma",
+                role: "Marketing Head, Fashion Hub",
+                content: "Social media campaigns delivered exceptional ROI. Highly recommended!",
+                rating: 5,
+              },
+              {
+                name: "Amit Patel",
+                role: "Owner, Local Restaurant",
+                content: "Google My Business optimization brought 10x more customers to our restaurant.",
+                rating: 5,
+              },
+            ]}
+            itemClassName="flex-shrink-0 w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)]"
+            renderItem={(testimonial) => (
+              <Card className="group h-full border hover:border-primary/40 hover:shadow-xl transition-all duration-300">
+                <CardContent className="flex flex-col p-6 h-full">
+                  {/* Stars */}
+                  <div className="flex gap-1 mb-4">
+                    {[...Array(testimonial.rating)].map((_, i) => (
+                      <Star
+                        key={i}
+                        className="w-4 h-4 text-yellow-500 fill-yellow-500"
+                      />
+                    ))}
+                  </div>
+                  {/* Content */}
+                  <p className="text-sm lg:text-base text-muted-foreground mb-6 leading-relaxed flex-1">
+                    "{testimonial.content}"
+                  </p>
+                  {/* Client Info with Initial Logo */}
+                  <div className="flex items-center gap-3 pt-4 border-t">
+                    {/* Initial Avatar */}
+                    <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center text-white font-bold text-lg shadow-md">
+                      {testimonial.name.charAt(0).toUpperCase()}
+                    </div>
+                    {/* Name + Role */}
+                    <div>
+                      <p className="font-bold">{testimonial.name}</p>
+                      <p className="text-sm text-muted-foreground">
+                        {testimonial.role}
+                      </p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            )}
+          />
 
-{/* FAQ Section */}
-<section className="py-24 bg-background">
-  <div className="container mx-auto px-4">
+        </div>
+      </section>
 
-    {/* Header */}
-    <div className="text-center mb-16">
-       <Badge className="mb-4 px-4 py-2 text-[var(--chart-4)]" variant="secondary">
-        <CheckCircle2 className="w-4 h-4 mr-2" />
-        FAQs
-      </Badge>
+      {/* FAQ Section */}
+      <section className="py-24 bg-background">
+        <div className="container mx-auto px-4">
 
-      <h2 className="text-4xl lg:text-6xl font-bold mb-6 text-balance">
-        Frequently Asked Questions
-      </h2>
+          {/* Header */}
+          <div className="text-center mb-16">
+            <Badge className="mb-4 px-4 py-2 text-[var(--chart-4)]" variant="secondary">
+              <CheckCircle2 className="w-4 h-4 mr-2" />
+              FAQs
+            </Badge>
 
-      <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-        Find answers to common questions about our digital marketing services
-      </p>
-    </div>
+            <h2 className="text-4xl lg:text-6xl font-bold mb-6 text-balance">
+              Frequently Asked Questions
+            </h2>
 
-    {/* STATE (INLINE - NO COMPONENT) */}
-    {(() => {
-      const [openIndex, setOpenIndex] = useState<number | null>(null)
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              Find answers to common questions about our digital marketing services
+            </p>
+          </div>
 
-      const faqs = [
-        {
-          icon: Search,
-          question: "How long before I see results from SEO?",
-          answer:
-            "SEO typically takes 3–6 months to show significant results. We provide monthly reports tracking your progress and rankings.",
-        },
-        {
-          icon: Share2,
-          question: "What's included in social media management?",
-          answer:
-            "Content creation, posting schedule, community management, paid ads, analytics, and monthly strategy reviews.",
-        },
-        {
-          icon: BarChart3,
-          question: "Do you manage Google Ads campaigns?",
-          answer:
-            "Yes, we handle complete campaign setup, optimization, A/B testing, and provide detailed ROI reports.",
-        },
-        {
-          icon: Mail,
-          question: "Can you help with email marketing?",
-          answer:
-            "We create campaigns, design templates, manage lists, and optimize for better open and click rates.",
-        },
-      ]
+          {/* STATE (INLINE - NO COMPONENT) */}
+          {(() => {
+            const [openIndex, setOpenIndex] = useState<number | null>(null)
 
-      return (
-        <div className="max-w-5xl mx-auto flex flex-col gap-6">
-
-          {faqs.map((faq, index) => {
-            const Icon = faq.icon
-            const isOpen = openIndex === index
+            const faqs = [
+              {
+                icon: Search,
+                question: "How long before I see results from SEO?",
+                answer:
+                  "SEO typically takes 3–6 months to show significant results. We provide monthly reports tracking your progress and rankings.",
+              },
+              {
+                icon: Share2,
+                question: "What's included in social media management?",
+                answer:
+                  "Content creation, posting schedule, community management, paid ads, analytics, and monthly strategy reviews.",
+              },
+              {
+                icon: BarChart3,
+                question: "Do you manage Google Ads campaigns?",
+                answer:
+                  "Yes, we handle complete campaign setup, optimization, A/B testing, and provide detailed ROI reports.",
+              },
+              {
+                icon: Mail,
+                question: "Can you help with email marketing?",
+                answer:
+                  "We create campaigns, design templates, manage lists, and optimize for better open and click rates.",
+              },
+            ]
 
             return (
-              <div
-                key={index}
-                className="border rounded-xl bg-card hover:shadow-md transition"
-              >
+              <div className="max-w-5xl mx-auto flex flex-col gap-6">
 
-                {/* Question */}
-                <button
-                  onClick={() =>
-                    setOpenIndex(isOpen ? null : index)
-                  }
-                  className="w-full flex items-center justify-between p-5 text-left"
-                >
+                {faqs.map((faq, index) => {
+                  const Icon = faq.icon
+                  const isOpen = openIndex === index
 
-                  <div className="flex items-center gap-3">
+                  return (
+                    <div
+                      key={index}
+                      className="border rounded-xl bg-card hover:shadow-md transition"
+                    >
 
-                    <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
-                      <Icon className="w-5 h-5 text-primary" />
+                      {/* Question */}
+                      <button
+                        onClick={() =>
+                          setOpenIndex(isOpen ? null : index)
+                        }
+                        className="w-full flex items-center justify-between p-5 text-left"
+                      >
+
+                        <div className="flex items-center gap-3">
+
+                          <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
+                            <Icon className="w-5 h-5 text-primary" />
+                          </div>
+
+                          <h3 className="text-base lg:text-lg font-semibold">
+                            {faq.question}
+                          </h3>
+
+                        </div>
+
+                        <ChevronDown
+                          className={`w-5 h-5 transition-transform duration-300 ${isOpen ? "rotate-180" : ""
+                            }`}
+                        />
+
+                      </button>
+
+                      {/* Answer */}
+                      <div
+                        className={`px-5 pb-5 text-muted-foreground text-sm lg:text-base leading-relaxed ${isOpen ? "block" : "hidden"
+                          }`}
+                      >
+                        {faq.answer}
+                      </div>
+
                     </div>
-
-                    <h3 className="text-base lg:text-lg font-semibold">
-                      {faq.question}
-                    </h3>
-
-                  </div>
-
-                  <ChevronDown
-                    className={`w-5 h-5 transition-transform duration-300 ${
-                      isOpen ? "rotate-180" : ""
-                    }`}
-                  />
-
-                </button>
-
-                {/* Answer */}
-                <div
-                  className={`px-5 pb-5 text-muted-foreground text-sm lg:text-base leading-relaxed ${
-                    isOpen ? "block" : "hidden"
-                  }`}
-                >
-                  {faq.answer}
-                </div>
+                  )
+                })}
 
               </div>
             )
-          })}
+          })()}
+
+          {/* Button */}
+          <div className="text-center mt-10">
+            <Button asChild size="lg" className="rounded-full px-8">
+              <Link href="/faq">
+                View All FAQs <ArrowRight className="ml-2 w-5 h-5" />
+              </Link>
+            </Button>
+          </div>
 
         </div>
-      )
-    })()}
-
-    {/* Button */}
-    <div className="text-center mt-10">
-      <Button asChild size="lg" className="rounded-full px-8">
-        <Link href="/faq">
-          View All FAQs <ArrowRight className="ml-2 w-5 h-5" />
-        </Link>
-      </Button>
-    </div>
-
-  </div>
-</section>
+      </section>
 
       {/* Call to Action with Image */}
       <section className="py-24 bg-background">

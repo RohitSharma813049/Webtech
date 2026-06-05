@@ -76,10 +76,10 @@ export default function PricingPage() {
 
   return (
     <div className="min-h-screen">
-     
+
 
       <HeroSection
-        title="Price"
+        title="Pricing"
         titleHighlight="Plans"
         description="Explore how we've helped businesses across various industries achieve their digital transformation goals with our proven strategies and expert execution."
         primaryCTA={{ label: "Start Your Project", href: "/contact" }}
@@ -87,7 +87,7 @@ export default function PricingPage() {
         showImages={true}
       />
 
- 
+
 
       {/* Service Category Pricing Section */}
       <PricingSection />
@@ -105,7 +105,7 @@ export default function PricingPage() {
         data={individualPricingData}
         defaultTab="SEO"
       />
-     <HeroSection
+      <HeroSection
         title="Ready to Invest"
         titleHighlight="in Your Growth?"
         description="Our flexible pricing plans are designed to fit businesses of all sizes. Get started today and scale as you grow with our transparent, no-hassle pricing."
@@ -148,24 +148,24 @@ export default function PricingPage() {
                     </div>
                   </div>
                 </div>
-         <div className="mt-6 pt-6 border-t border-border">
-  <EnquiryPopup
-    trigger={
-      <Button
-        size="lg"
-        className="w-full lg:w-auto bg-[#1f0159] hover:bg-[#2d0a7a] text-white"
-      >
-        Get Accurate Quote
-      </Button>
-    }
-  />
-</div>
+                <div className="mt-6 pt-6 border-t border-border">
+                  <EnquiryPopup
+                    trigger={
+                      <Button
+                        size="lg"
+                        className="w-full lg:w-auto bg-[#1f0159] hover:bg-[#2d0a7a] text-white"
+                      >
+                        Get Accurate Quote
+                      </Button>
+                    }
+                  />
+                </div>
               </CardContent>
             </Card>
           </div>
         </div>
       </section>
-   
+
       {/* FAQs Section */}
       <section className="py-20 bg-secondary/10">
         <div className="container mx-auto px-4">

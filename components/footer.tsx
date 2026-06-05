@@ -23,6 +23,7 @@ import {
 
 import { Button } from "@/components/ui/button"
 import { FooterCollapsible } from "@/components/footer-collapsible"
+import { EnquiryPopup } from "@/components/enquiry-popup"
 import { useState, memo } from "react"
 import { motion } from "framer-motion"
 
@@ -295,17 +296,18 @@ export const Footer = memo(function Footer() {
 
               <ul className="space-y-2">
                 {[
-                  { label: "Home", href: "/" },
-                  { label: "Portfolio", href: "/portfolio" },
-                  { label: "Services", href: "/services" },
-                  { label: "About", href: "/about" },
-                  { label: "Contact", href: "/contact" },
-                  { label: "Blog", href: "/blog" },
-                ].map((link) => (
+                { label: "Home", href: "/" },
+                { label: "Portfolio", href: "/portfolio" },
+                { label: "Services", href: "/services" },
+                { label: "Pricing", href: "/pricing" },
+                { label: "Blogs", href: "/blog" },
+                { label: "About", href: "/about" },
+                { label: "Contact", href: "/contact" }
+              ].map((link) => (
                   <li key={link.href}>
                     <Link
                       href={link.href}
-                      className="text-sm text-gray-300 hover:text-blue-400 transition-colors"
+                      className="text-sm text-gray-300 hover:text-yellow-500 transition-colors"
                     >
                       {link.label}
                     </Link>
@@ -322,18 +324,30 @@ export const Footer = memo(function Footer() {
 
               <ul className="space-y-2">
                 {[
-                  "Website Development",
-                  "Digital Marketing",
-                  "SaaS Services",
-                  "UI/UX Design",
-                  "SEO Services",
-                  "App Development",
-                ].map((service) => (
+                  { label: "Website Development", category: "Website & App Development", service: "Enquiry Website & App Development" },
+                  { label: "Digital Marketing", category: "Digital Marketing", service: "" },
+                  { label: "SaaS Services", category: "SaaS Services", service: "" },
+                  { label: "UI/UX Design", category: "Designing Services", service: "UI / UX Designing" },
+                  { label: "SEO Services", category: "Digital Marketing", service: "Search Engine Optimization (SEO)" },
+                  { label: "App Development", category: "Website & App Development", service: "Native & Hybrid App Development" },
+                ].map((item) => (
                   <li
-                    key={service}
+                    key={item.label}
                     className="text-sm text-gray-300"
                   >
-                    {service}
+                    <EnquiryPopup
+                      preselectedCategory={item.category}
+                      preselectedService={item.service}
+                      trigger={
+                        <Button
+                          variant="link"
+                          size="sm"
+                          className="h-auto p-0 text-sm text-gray-300 hover:text-yellow-500 font-normal justify-start"
+                        >
+                          {item.label}
+                        </Button>
+                      }
+                    />
                   </li>
                 ))}
               </ul>
@@ -348,14 +362,14 @@ export const Footer = memo(function Footer() {
               <div className="space-y-4">
                 {/* Address */}
                 <div className="flex items-start gap-3">
-                  <MapPin className="w-5 h-5 text-blue-400 mt-1 flex-shrink-0" />
+                  <MapPin className="w-5 h-5 text-yellow-500 mt-1 flex-shrink-0" />
 
                   <div className="flex flex-col gap-3">
                     <a
                       href="https://maps.google.com/?q=Building+3H-47+NIT-3+Main+Road+Faridabad+121001"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-sm text-gray-300 hover:text-blue-400 transition-colors leading-relaxed"
+                      className="text-sm text-gray-300 hover:text-yellow-500 transition-colors leading-relaxed"
                     >
                       {companyInfo.address}
                     </a>
@@ -364,14 +378,14 @@ export const Footer = memo(function Footer() {
 
 
                 <div className="flex items-start gap-3">
-                  <MapPin className="w-5 h-5 text-blue-400 mt-1 flex-shrink-0" />
+                  <MapPin className="w-5 h-5 text-yellow-500 mt-1 flex-shrink-0" />
 
                   <div className="flex flex-col gap-3">
                     <a
                       href="https://maps.google.com/?q=Gaur+City+Centre+4+Murti+Chowk+Gaur+City+1+Ghaziabad+201318"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-sm text-gray-300 hover:text-blue-400 transition-colors leading-relaxed"
+                      className="text-sm text-gray-300 hover:text-yellow-500 transition-colors leading-relaxed"
                     >
                       {companyInfo.address2}
                     </a>
@@ -382,11 +396,11 @@ export const Footer = memo(function Footer() {
 
                 {/* Phone */}
                 <div className="flex items-center gap-3">
-                  <Phone className="w-5 h-5 text-blue-400" />
+                  <Phone className="w-5 h-5 text-yellow-500" />
 
                   <a
                     href={`tel:${companyInfo.phone}`}
-                    className="text-sm text-gray-300 hover:text-blue-400"
+                    className="text-sm text-gray-300 hover:text-yellow-500 transition-colors"
                   >
                     {companyInfo.phone}
                   </a>
@@ -394,11 +408,11 @@ export const Footer = memo(function Footer() {
 
                 {/* Phone 2 */}
                 <div className="flex items-center gap-3">
-                  <Phone className="w-5 h-5 text-blue-400" />
+                  <Phone className="w-5 h-5 text-yellow-500" />
 
                   <a
                     href={`tel:${companyInfo.phone2}`}
-                    className="text-sm text-gray-300 hover:text-blue-400"
+                    className="text-sm text-gray-300 hover:text-yellow-500 transition-colors"
                   >
                     {companyInfo.phone2}
                   </a>
@@ -406,11 +420,11 @@ export const Footer = memo(function Footer() {
 
                 {/* Email */}
                 <div className="flex items-center gap-3">
-                  <Mail className="w-5 h-5 text-blue-400" />
+                  <Mail className="w-5 h-5 text-yellow-500" />
 
                   <a
                     href={`mailto:${companyInfo.email}`}
-                    className="text-sm text-gray-300 hover:text-blue-400"
+                    className="text-sm text-gray-300 hover:text-yellow-500 transition-colors"
                   >
                     {companyInfo.email}
                   </a>
@@ -431,7 +445,7 @@ export const Footer = memo(function Footer() {
               {brands.map((brand, index) => (
                 <div
                   key={index}
-                  className="bg-blue-600/10 border border-blue-500/30 rounded-xl p-4 hover:border-blue-400 transition-all"
+                  className="bg-blue-600/10 border border-blue-500/30 rounded-xl p-4 hover:border-yellow-600 transition-all"
                 >
                   <div className="flex items-center gap-3">
                     <brand.Icon className="w-5 h-5 text-blue-400" />
@@ -471,30 +485,119 @@ export const Footer = memo(function Footer() {
             <h3 className="text-2xl font-bold mb-6">
               Our Locations
             </h3>
+<div className="flex flex-wrap gap-2">
+  {[
+    // 🇮🇳 India
+    "Delhi NCR",
+    "New Delhi",
+    "Gurgaon",
+    "Noida",
+    "Faridabad",
+    "Ghaziabad",
+    "Jaipur",
+    "Mumbai",
+    "Bangalore",
+    "Hyderabad",
+    "Pune",
+    "Chandigarh",
+    "Ahmedabad",
+    "Chennai",
+    "Kolkata",
+    "Surat",
+    "Indore",
+    "Bhopal",
+    "Goa",
 
-            <div className="flex flex-wrap gap-2">
-              {[
-                "Delhi NCR",
-                "Gurgaon",
-                "Noida",
-                "Faridabad",
-                "Ghaziabad",
-                "Jaipur",
-                "Mumbai",
-                "Bangalore",
-                "Hyderabad",
-                "Pune",
-                "Chandigarh",
-                "Pan India",
-              ].map((tag, index) => (
-                <span
-                  key={index}
-                  className="px-3 py-1.5 text-xs rounded-full bg-blue-600/20 border border-blue-500/30 text-blue-200"
-                >
-                  {tag}
-                </span>
-              ))}
-            </div>
+    // 🇮🇳 India states
+
+      "Andhra Pradesh",
+  "Arunachal Pradesh",
+  "Assam",
+  "Bihar",
+  "Chhattisgarh",
+  "Goa",
+  "Gujarat",
+  "Haryana",
+  "Himachal Pradesh",
+  "Jharkhand",
+  "Karnataka",
+  "Kerala",
+  "Madhya Pradesh",
+  "Maharashtra",
+  "Manipur",
+  "Meghalaya",
+  "Mizoram",
+  "Nagaland",
+  "Odisha",
+  "Punjab",
+  "Rajasthan",
+  "Sikkim",
+  "Tamil Nadu",
+  "Telangana",
+  "Tripura",
+  "Uttar Pradesh",
+  "Uttarakhand",
+  "West Bengal",
+
+    // 🇺🇸 USA
+    "United States",
+    "New York",
+    "California",
+    "Los Angeles",
+    "San Francisco",
+    "Texas",
+    "Florida",
+
+    // 🇦🇪 UAE
+    "Dubai",
+    "Abu Dhabi",
+    "UAE",
+
+    // 🇬🇧 UK
+    "United Kingdom",
+    "London",
+    "Manchester",
+
+    // 🇦🇺 Australia
+    "Australia",
+    "Sydney",
+    "Melbourne",
+
+    // 🇨🇦 Canada
+    "Canada",
+    "Toronto",
+    "Vancouver",
+
+    // 🌍 Global
+    "Europe",
+    "Asia",
+    "India",
+     "Germany",
+     "Italy",
+     "France",
+     "Spain",
+     "Mexico",
+     "Panama",
+     "Nepal",
+     "Bangladesh",
+     "Singapore",
+     "Malaysia",
+     "vietnam",
+     "Thailand",
+     "Philippines",
+     "Brazil",
+     "South-Africa",
+     "Maldives",
+     "Pan Global",
+  ].map((tag, index) => (
+    <span
+      key={index}
+      className="px-3 py-1.5 text-xs rounded-full bg-blue-600/20 border border-blue-500/30 text-blue-200"
+    >
+      {tag}
+    </span>
+  ))}
+</div>
 
           </div>
         )}
@@ -568,9 +671,12 @@ export const Footer = memo(function Footer() {
                 { label: "Home", href: "/" },
                 { label: "Portfolio", href: "/portfolio" },
                 { label: "Services", href: "/services" },
+                { label: "Pricing", href: "/pricing" },
+                { label: "Blogs", href: "/blog" },
                 { label: "About", href: "/about" },
                 { label: "Contact", href: "/contact" },
-                { label: "Blog", href: "/blog" },
+               
+               
               ],
             },
 
@@ -697,7 +803,7 @@ export const Footer = memo(function Footer() {
         <div className="border-t border-white/10 pt-8">
 
           {/* Team Members */}
-          <div className="flex lg:justify-between lg:mx-70  mb-3 justify-around gap-4  ">
+          <div className="flex lg:justify-between lg:mx-70 -mb-2 justify-around gap-4  ">
 
             {[
               "SAHIL BHATIA",
@@ -755,21 +861,21 @@ export const Footer = memo(function Footer() {
             <div className="flex flex-wrap justify-center gap-4">
               <Link
                 href="/privacy-policy"
-                className="text-sm text-gray-400 hover:text-yellow-600 transition-colors"
+                className="text-sm text-gray-400 hover:text-yellow-500 transition-colors"
               >
                 Privacy Policy
               </Link>
 
               <Link
                 href="/terms-of-service"
-                className="text-sm text-gray-400 hover:text-yellow-600 transition-colors"
+                className="text-sm text-gray-400 hover:text-yellow-500 transition-colors"
               >
                 Terms of Service
               </Link>
 
               <Link
                 href="/cookie-policy"
-                className="text-sm text-gray-400 hover:text-yellow-600 transition-colors"
+                className="text-sm text-gray-400 hover:text-yellow-500 transition-colors"
               >
                 Cookie Policy
               </Link>

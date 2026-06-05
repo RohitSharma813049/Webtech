@@ -8,7 +8,7 @@ import { EnquiryPopup } from "./enquiry-popup"
 
 export function CTASection() {
   return (
-    <section className="py-6 lg:py-20">
+    <section className="py-6 lg:py-20 ">
       <div className="container mx-auto px-0">
 
         {/*
@@ -19,7 +19,7 @@ export function CTASection() {
           lg+    (1024px+)  : h-[320px]  — desktop layout
         */}
         <Card className="border-0 overflow-hidden relative rounded-xl lg:rounded-3xl shadow-2xl
-                          h-[280px] sm:h-[320px] md:h-[360px] lg:h-[320px]">
+                          h-auto h-[340px]">
 
           {/* BACKGROUND (DESKTOP) */}
           <div className="absolute inset-0 hidden lg:block">
@@ -27,7 +27,7 @@ export function CTASection() {
               src="/image/cta-banner/webeside-technology-banner-business-growth.webp"
               alt="Business Growth"
               fill
-              className="object-contain object-left"
+              className="object-cover object-left"
               priority
             />
           </div>
@@ -46,13 +46,13 @@ export function CTASection() {
           </div>
 
           {/* OVERLAY (DESKTOP) */}
-          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/30 to-primary/95 hidden lg:block" />
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/30 to-primary/95 hidden lg:block h-[420px] md:h-auto" />
 
           {/* OVERLAY (MOBILE) — stronger bottom-up gradient so text stays readable */}
-          <div className="absolute inset-0 bg-gradient-to-t from-primary/98 via-primary/85 to-primary/40 sm:hidden" />
+          <div className="inset-0 sm:hidden" />
 
           {/* OVERLAY (TABLET) — right-biased so image shows on the left */}
-          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/40 to-primary/95 hidden sm:block lg:hidden" />
+          {/* <div className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/40 to-primary/95 hidden sm:block lg:hidden" /> */}
 
           {/* DECORATIVE BLUR */}
           <div className="absolute top-0 right-0 w-48 h-48 bg-white/5 rounded-full blur-3xl" />
@@ -169,58 +169,62 @@ export function CTASection() {
             </div>
 
             {/* ================= MOBILE (< 640px) ================= */}
-            <div className="sm:hidden flex flex-col justify-center items-start h-full max-w-[200px]">
+<div className="sm:hidden absolute bottom-4 right-4 flex flex-col items-end max-w-[200px]">
 
-              <div className="[text-shadow:0_2px_8px_rgba(0,0,0,0.7)]">
+  <div className="[text-shadow:0_2px_8px_rgba(0,0,0,0.7)] text-right">
 
-                <h2 className="text-base font-bold text-white mb-1 leading-tight">
-                  Ready to Grow?
-                </h2>
+    <h2 className="text-base font-bold text-white mb-1 leading-tight">
+      Ready to Grow?
+    </h2>
 
-                <p className="text-xs text-white/90 mb-3">
-                  Get a free consultation today.
-                </p>
+    <p className="text-xs text-white/90 mb-3">
+      Get a free consultation today.
+    </p>
 
-                <div className="flex flex-row gap-2 mb-3">
-                  <EnquiryPopup
-                    trigger={
-                      <Button className="w-9 h-9 rounded-full bg-white text-primary p-0 shadow-lg hover:scale-105 transition">
-                        <Mail className="w-3.5 h-3.5" />
-                      </Button>
-                    }
-                  />
-                  <Button
-                    className="w-9 h-9 rounded-full bg-green-500 hover:bg-green-600 p-0 shadow-lg hover:scale-105 transition"
-                    asChild
-                  >
-                    <a href="https://wa.me/918860876087" target="_blank" rel="noopener noreferrer">
-                      <MessageCircle className="w-3.5 h-3.5 text-white" />
-                    </a>
-                  </Button>
-                  <Button
-                    className="w-9 h-9 rounded-full bg-primary hover:bg-accent/90 p-0 shadow-lg hover:scale-105 transition"
-                    asChild
-                  >
-                    <a href="tel:+918860876087">
-                      <Phone className="w-3.5 h-3.5 text-white" />
-                    </a>
-                  </Button>
-                </div>
+    <div className="flex flex-row gap-2 mb-3 justify-end">
 
-                <div className="flex flex-col gap-1.5 border-t border-white/20 pt-2.5">
-                  <span className="text-xs text-white/90 flex items-center gap-1.5">
-                    <Phone className="w-3 h-3 shrink-0" />
-                    8860876087
-                  </span>
-                  <span className="text-xs text-white/90 flex items-center gap-1.5">
-                    <Mail className="w-3 h-3 shrink-0" />
-                    info@webeside.in
-                  </span>
-                </div>
+      <EnquiryPopup
+        trigger={
+          <Button className="w-9 h-9 rounded-full bg-white text-primary p-0 shadow-lg hover:scale-105 transition">
+            <Mail className="w-3.5 h-3.5" />
+          </Button>
+        }
+      />
 
-              </div>
-            </div>
+      <Button
+        className="w-9 h-9 rounded-full bg-green-500 hover:bg-green-600 p-0 shadow-lg hover:scale-105 transition"
+        asChild
+      >
+        <a href="https://wa.me/918860876087" target="_blank" rel="noopener noreferrer">
+          <MessageCircle className="w-3.5 h-3.5 text-white" />
+        </a>
+      </Button>
 
+      <Button
+        className="w-9 h-9 rounded-full bg-primary hover:bg-accent/90 p-0 shadow-lg hover:scale-105 transition"
+        asChild
+      >
+        <a href="tel:+918860876087">
+          <Phone className="w-3.5 h-3.5 text-white" />
+        </a>
+      </Button>
+
+    </div>
+
+    <div className="flex flex-col gap-1.5 border-t border-white/20 pt-2.5 items-end">
+      <span className="text-xs text-white/90 flex items-center gap-1.5">
+        <Phone className="w-3 h-3 shrink-0" />
+        8860876087
+      </span>
+
+      <span className="text-xs text-white/90 flex items-center gap-1.5">
+        <Mail className="w-3 h-3 shrink-0" />
+        info@webeside.in
+      </span>
+    </div>
+
+  </div>
+</div>
           </CardContent>
         </Card>
 

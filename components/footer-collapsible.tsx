@@ -56,7 +56,7 @@ export const FooterCollapsible = memo(function FooterCollapsible({ sections, cla
                   <a
                     key={link.label}
                     href={link.href}
-                    className="block text-sm text-gray-400 hover:text-blue-400 transition-colors py-1"
+                    className="block text-sm text-gray-400 hover:text-yellow-500 transition-colors py-1"
                   >
                     {link.label}
                   </a>

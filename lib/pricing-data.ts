@@ -2,61 +2,78 @@ export interface PricingPlan {
   name: string
   price: string
   period: string
+  prices?: {
+    "1 Month": string
+    "6 Months": string
+    "1 Year": string
+  }
   description: string
   features: string[]
+  note?:String
   popular?: boolean
 }
 
 export const pricingData: Record<string, PricingPlan[]> = {
-  "SEO Services": [
+"Integration Services": [
+  {
+    name: "SMS Integration",
+    price: "₹10,000",
+    period: "/One-Time",
+    description: "Perfect for small businesses starting with SMS automation",
+    features: [
+      "SMS API Integration",
+      "Bulk SMS Sending System",
+      "OTP & Verification SMS",
+      "Delivery Reports (DLR)",
+      "Basic Dashboard Setup",
+    ],
+    note:
+      "API cost is not included in this integration cost. It may vary based on number of users and services used.",
+  },
+  {
+    name: "Whatsapp Integration",
+    price: "₹20,000",
+    period: "/One-Time",
+    description: "For growing businesses seeking better customer engagement",
+    popular: true,
+    features: [
+      "WhatsApp Business API Integration",
+      "Automated Message Templates",
+      "Chatbot Setup (Basic)",
+      "Order & Notification Alerts",
+      "CRM Integration Support",
+      "Priority Support",
+    ],
+    note:
+      "API cost is not included in this integration cost. It may vary based on number of users and services used.",
+  },
+  {
+    name: "IVR Integration",
+    price: "₹30,000",
+    period: "/One-Time",
+    description: "Complete IVR solution for call automation",
+    features: [
+      "Multi-level IVR Call Flow Setup",
+      "Call Routing System",
+      "Voice Recording & Playback",
+      "Missed Call Alerts",
+      "Call Analytics Dashboard",
+      "Custom Greeting Setup",
+    ],
+    note:
+      "API cost is not included in this integration cost. It may vary based on number of users and services used.",
+  },
+],
+  "Digital Marketing": [
     {
       name: "Starter",
       price: "₹10,000",
       period: "/month",
-      description: "Perfect for small businesses starting with SEO",
-      features: [
-        "Keyword Research (20 keywords)",
-        "On-page Optimization",
-        "Monthly Reports",
-        "Basic Link Building",
-        "Email Support",
-      ],
-    },
-    {
-      name: "Professional",
-      price: "₹25,000",
-      period: "/month",
-      description: "For growing businesses seeking better visibility",
-      popular: true,
-      features: [
-        "Keyword Research (50+ keywords)",
-        "Advanced On-page & Technical SEO",
-        "Weekly Reports",
-        "Premium Link Building",
-        "Content Optimization",
-        "Priority Email & Phone Support",
-      ],
-    },
-    {
-      name: "Enterprise",
-      price: "₹50,000",
-      period: "/month",
-      description: "Complete SEO solution for large businesses",
-      features: [
-        "Unlimited Keywords",
-        "Complete SEO Solution",
-        "Daily Reports",
-        "Authority Link Building",
-        "Dedicated SEO Manager",
-        "24/7 Dedicated Support",
-      ],
-    },
-  ],
-  "Digital Marketing": [
-    {
-      name: "Starter",
-      price: "₹15,000",
-      period: "/month",
+      prices: {
+        "1 Month": "₹10,000",
+        "6 Months": "₹60,000",
+        "1 Year": "₹120,000"
+      },
       description: "Perfect for small businesses starting their digital journey",
       features: [
         "SEO Basic Package",
@@ -68,8 +85,13 @@ export const pricingData: Record<string, PricingPlan[]> = {
     },
     {
       name: "Professional",
-      price: "₹35,000",
+      price: "₹20,000",
       period: "/month",
+      prices: {
+        "1 Month": "₹20,000",
+        "6 Months": "₹120,000",
+        "1 Year": "₹240,000"
+      },
       description: "Ideal for growing businesses looking to expand online",
       popular: true,
       features: [
@@ -84,8 +106,13 @@ export const pricingData: Record<string, PricingPlan[]> = {
     },
     {
       name: "Enterprise",
-      price: "₹75,000",
+      price: "₹35,000",
       period: "/month",
+      prices: {
+        "1 Month": "₹35,000",
+        "6 Months": "₹210,000",
+        "1 Year": "₹420,000"
+      },
       description: "Comprehensive solution for established businesses",
       features: [
         "Complete SEO Package",
@@ -155,6 +182,11 @@ export const pricingData: Record<string, PricingPlan[]> = {
       name: "Basic Plan",
       price: "₹5,000",
       period: "/month",
+      prices: {
+        "1 Month": "₹5,000",
+        "6 Months": "₹30,000",
+        "1 Year": "₹60,000"
+      },
       description: "Essential SaaS tools for small teams",
       features: ["Up to 10 Users", "Basic Features", "Email Support", "Monthly Backups", "99% Uptime SLA"],
     },
@@ -162,6 +194,11 @@ export const pricingData: Record<string, PricingPlan[]> = {
       name: "Business Plan",
       price: "₹15,000",
       period: "/month",
+      prices: {
+        "1 Month": "₹15,000",
+        "6 Months": "₹90,000",
+        "1 Year": "₹180,000"
+      },
       description: "Advanced features for growing businesses",
       popular: true,
       features: [
@@ -178,6 +215,11 @@ export const pricingData: Record<string, PricingPlan[]> = {
       name: "Enterprise Plan",
       price: "₹40,000",
       period: "/month",
+      prices: {
+        "1 Month": "₹40,000",
+        "6 Months": "₹240,000",
+        "1 Year": "₹480,000"
+      },
       description: "Complete solution for large organizations",
       features: [
         "Unlimited Users",
@@ -250,6 +292,11 @@ export const individualPricingData: Record<string, PricingPlan[]> = {
       name: "Basic SEO",
       price: "₹10,000",
       period: "/month",
+      prices: {
+        "1 Month": "₹10,000",
+        "6 Months": "₹60,000",
+        "1 Year": "₹120,000"
+      },
       description: "For small businesses starting with SEO",
       features: [
         "Keyword Research (20 keywords)",
@@ -262,6 +309,11 @@ export const individualPricingData: Record<string, PricingPlan[]> = {
       name: "Advanced SEO",
       price: "₹25,000",
       period: "/month",
+      prices: {
+        "1 Month": "₹25,000",
+        "6 Months": "₹150,000",
+        "1 Year": "₹300,000"
+      },
       description: "For growing businesses",
       popular: true,
       features: [
@@ -276,6 +328,11 @@ export const individualPricingData: Record<string, PricingPlan[]> = {
       name: "Enterprise SEO",
       price: "₹50,000",
       period: "/month",
+      prices: {
+        "1 Month": "₹50,000",
+        "6 Months": "₹300,000",
+        "1 Year": "₹600,000"
+      },
       description: "For large businesses",
       features: [
         "Unlimited Keywords",
@@ -291,6 +348,11 @@ export const individualPricingData: Record<string, PricingPlan[]> = {
       name: "Ads Management",
       price: "From ₹15,000",
       period: "/month",
+      prices: {
+        "1 Month": "From ₹15,000",
+        "6 Months": "From ₹90,000",
+        "1 Year": "From ₹180,000"
+      },
       description: "Professional ad campaign management (+ ad budget)",
       features: [
         "Campaign Strategy & Setup",
@@ -306,6 +368,11 @@ export const individualPricingData: Record<string, PricingPlan[]> = {
       name: "SMM Package",
       price: "From ₹12,000",
       period: "/month",
+      prices: {
+        "1 Month": "From ₹12,000",
+        "6 Months": "From ₹72,000",
+        "1 Year": "From ₹144,000"
+      },
       description: "Engage your audience across social platforms",
       features: [
         "Platform Management",
@@ -321,6 +388,11 @@ export const individualPricingData: Record<string, PricingPlan[]> = {
       name: "WhatsApp Package",
       price: "From ₹8,000",
       period: "/month",
+      prices: {
+        "1 Month": "From ₹8,000",
+        "6 Months": "From ₹48,000",
+        "1 Year": "From ₹96,000"
+      },
       description: "Direct outreach via WhatsApp",
       features: [
         "Bulk Message Campaigns",
