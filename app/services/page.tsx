@@ -37,8 +37,7 @@ export default function ServicesPage() {
               showImages={true}
             />
 
-      {/* Added Pricing Section */}
-      <PricingSection />
+ 
 
       {/* Services Section */}
       <section className="py-12 lg:py-16">
@@ -143,6 +142,9 @@ export default function ServicesPage() {
           
         </div>
       </section>
+      
+     {/* Added Pricing Section */}
+      <PricingSection />
 
       <CTASection />
     </div>

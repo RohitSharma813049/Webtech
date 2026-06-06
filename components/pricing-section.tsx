@@ -32,7 +32,7 @@ export function PricingSection({
   const [billingPeriod, setBillingPeriod] = useState<"1 Month" | "6 Months" | "1 Year">("1 Month")
   
   const currentPlans = data[selectedCategory] || []
-  const hasMultiplePrices = Object.values(data).some(plans => plans.some(plan => plan.prices))
+  const hasMultiplePrices = currentPlans.some(plan => plan.prices)
 
   return (
     <section className={`py-20 ${backgroundClass}`}>
