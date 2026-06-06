@@ -55,7 +55,7 @@ export const WelcomePopup = memo(function WelcomePopup() {
   if (!mounted || !isOpen) return null
 
   return (
-    <div className="fixed inset-0 z-[999999] flex items-center justify-center bg-black/70 backdrop-blur-sm p-4"  onClick={handleClose}>
+    <div className="fixed inset-0 z-[999999] flex items-center justify-center bg-black/70 backdrop-blur-sm p-4" onClick={handleClose}>
 
       {/* POPUP BOX */}
       <div className="relative w-full max-w-3xl overflow-hidden rounded-3xl bg-background shadow-2xl border border-border animate-in fade-in zoom-in duration-300">
