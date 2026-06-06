@@ -46,22 +46,7 @@ export function PricingSection({
             {description}
           </p>
         </div>
-        <Tabs defaultValue={defaultTab} className="w-full">
-          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4 mb-16">
-            <TabsList className="flex overflow-x-auto whitespace-nowrap scrollbar-hide snap-x justify-start h-auto p-2 bg-muted/50 w-full sm:flex-wrap">
-              {Object.keys(data).map((category) => (
-                <TabsTrigger
-                  key={category}
-                  value={category}
-                  onClick={() => setSelectedCategory(category)}
-                  className="px-6 py-3 text-sm font-semibold data-[state=active]:bg-primary data-[state=active]:text-primary-foreground snap-center flex-shrink-0"
-                >
-                  {category}
-                </TabsTrigger>
-              ))}
-            </TabsList>
-
-            <div className="flex flex-col sm:flex-row gap-4 items-center">
+          <div className="flex flex-col sm:flex-row gap-4 items-center justify-end m-4">
               {hasMultiplePrices && (
                 <Select
                   value={billingPeriod}
@@ -86,6 +71,22 @@ export function PricingSection({
                 }
               />
             </div>
+        <Tabs defaultValue={defaultTab} className="w-full">
+          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4 mb-16">
+            <TabsList className="flex overflow-x-auto whitespace-nowrap scrollbar-hide snap-x justify-start h-auto p-2 bg-muted/50 w-full sm:flex-wrap">
+              {Object.keys(data).map((category) => (
+                <TabsTrigger
+                  key={category}
+                  value={category}
+                  onClick={() => setSelectedCategory(category)}
+                  className="px-6 py-3 text-sm font-semibold data-[state=active]:bg-primary data-[state=active]:text-primary-foreground snap-center flex-shrink-0"
+                >
+                  {category}
+                </TabsTrigger>
+              ))}
+            </TabsList>
+
+ 
           </div>
 
           {Object.entries(data).map(([category, plans]) => (

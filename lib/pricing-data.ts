@@ -9,61 +9,617 @@ export interface PricingPlan {
   }
   description: string
   features: string[]
-  note?:String
+  note?: string
   popular?: boolean
 }
 
 export const pricingData: Record<string, PricingPlan[]> = {
-"Integration Services": [
-  {
-    name: "SMS Integration",
-    price: "₹10,000",
-    period: "/One-Time",
-    description: "Perfect for small businesses starting with SMS automation",
-    features: [
-      "SMS API Integration",
-      "Bulk SMS Sending System",
-      "OTP & Verification SMS",
-      "Delivery Reports (DLR)",
-      "Basic Dashboard Setup",
-    ],
-    note:
-      "API cost is not included in this integration cost. It may vary based on number of users and services used.",
-  },
-  {
-    name: "Whatsapp Integration",
-    price: "₹20,000",
-    period: "/One-Time",
-    description: "For growing businesses seeking better customer engagement",
-    popular: true,
-    features: [
-      "WhatsApp Business API Integration",
-      "Automated Message Templates",
-      "Chatbot Setup (Basic)",
-      "Order & Notification Alerts",
-      "CRM Integration Support",
-      "Priority Support",
-    ],
-    note:
-      "API cost is not included in this integration cost. It may vary based on number of users and services used.",
-  },
-  {
-    name: "IVR Integration",
-    price: "₹30,000",
-    period: "/One-Time",
-    description: "Complete IVR solution for call automation",
-    features: [
-      "Multi-level IVR Call Flow Setup",
-      "Call Routing System",
-      "Voice Recording & Playback",
-      "Missed Call Alerts",
-      "Call Analytics Dashboard",
-      "Custom Greeting Setup",
-    ],
-    note:
-      "API cost is not included in this integration cost. It may vary based on number of users and services used.",
-  },
-],
+
+  // ─── SOCIAL MEDIA HANDLING (SMH) ───────────────────────────────────────────
+  "Social Media Handling": [
+    {
+      name: "Basic Plan",
+      price: "₹7,999",
+      period: "/month",
+      prices: {
+        "1 Month": "₹7,999",
+        "6 Months": "₹27,999",
+        "1 Year": "₹49,999",
+      },
+      description: "Essential social media handling for one platform",
+      features: [
+        "Up to 10 Reels / 5 Posts per month",
+        "Any one platform (Insta, FB, YouTube, LinkedIn or Pinterest)",
+        "Pre Shoot Reel/Video enhancement & Post creation",
+        "Account setup & optimization (Bio, Highlights, Branding)",
+        "Monthly content strategy & posting calendar",
+        "Creative post design (Static, Carousel & Reels)",
+        "Caption writing with relevant hashtags",
+        "Brand tone & visual consistency",
+        "Campaign & festival creatives",
+        "Story highlights & cover design",
+        "Optimised for Views, reach & visibility",
+      ],
+      note: "Minimum 6 months contract. Reels must be provided by client; shoot costs charged separately. 6-month package = 2 months free.",
+    },
+    {
+      name: "Advanced Plan",
+      price: "₹9,999",
+      period: "/month",
+      prices: {
+        "1 Month": "₹9,999",
+        "6 Months": "₹44,999",
+        "1 Year": "₹84,999",
+      },
+      description: "More reels, more posts, full platform management",
+      popular: true,
+      features: [
+        "Up to 15 Reels / 10 Posts per month",
+        "Any one platform (Insta, FB, YouTube, LinkedIn or Pinterest)",
+        "Pre Shoot Video enhancement & Post creation",
+        "Account setup & optimization (Bio, Highlights, Branding)",
+        "Monthly content strategy & posting calendar",
+        "Creative post design (Static, Carousel & Reels)",
+        "Caption writing with relevant hashtags",
+        "Brand tone & visual consistency",
+        "Campaign & festival creatives",
+        "Story highlights & cover design",
+        "Optimised for Views, reach & visibility",
+        "100% Authentic Work & White-Hat Techniques",
+        "Monthly post and engagement report",
+      ],
+      note: "Minimum 6 months contract. Reels must be provided by client; shoot costs charged separately. 6-month package = 2 months free.",
+    },
+    {
+      name: "Custom Plan",
+      price: "Call for more",
+      period: "",
+      description: "For multiple platforms, more posts/reels, and networking",
+      features: [
+        "Increased number of Static and Reel posts",
+        "Multiple social media platforms",
+        "Networking and more engagement",
+        "100% Authentic Work & White-Hat Techniques",
+        "Monthly post and engagement report",
+      ],
+      note: "Contact us at +91-88-6087-6087 for a custom quote.",
+    },
+  ],
+
+  // ─── SOCIAL MEDIA NETWORKING (SMO) ─────────────────────────────────────────
+  "Social Media Networking": [
+    {
+      name: "Basic Plan",
+      price: "₹4,999",
+      period: "/month",
+      prices: {
+        "1 Month": "₹4,999",
+        "6 Months": "₹27,999",
+        "1 Year": "₹49,999",
+      },
+      description: "Daily group message marketing for one platform",
+      features: [
+        "Daily message marketing in top performing groups (30–40 groups)",
+        "Page moderation (Comments on popular pages)",
+        "Story highlights & cover design (2 stories)",
+        "Social Media & Post optimisation for Views, reach & visibility",
+        "Account setup & optimization (Bio, Highlights, Branding)",
+        "Monthly content strategy & posting calendar",
+        "Brand tone & visual consistency",
+        "Suggest high performing Campaign & festival creatives",
+        "Audience growth & engagement strategy",
+        "Competitor & market analysis",
+      ],
+      note: "Minimum 6 months contract. 6-month package = 2 months free.",
+    },
+    {
+      name: "Advanced Plan",
+      price: "₹7,999",
+      period: "/month",
+      prices: {
+        "1 Month": "₹7,999",
+        "6 Months": "₹44,999",
+        "1 Year": "₹84,999",
+      },
+      description: "Expanded group reach with more stories and engagement",
+      popular: true,
+      features: [
+        "Daily message marketing in top performing groups (50–60 groups)",
+        "Page moderation (Comments on popular pages)",
+        "Story highlights & cover design (3–4 stories)",
+        "Social Media & Post optimisation for Views, reach & visibility",
+        "Account setup & optimization (Bio, Highlights, Branding)",
+        "Monthly content strategy & posting calendar",
+        "Brand tone & visual consistency",
+        "Suggest high performing Campaign & festival creatives",
+        "Audience growth & engagement strategy",
+        "Competitor & market analysis",
+        "100% Authentic Work & White-Hat Techniques",
+        "Monthly post and engagement report",
+      ],
+      note: "Minimum 6 months contract. 6-month package = 2 months free.",
+    },
+    {
+      name: "Custom Plan",
+      price: "Call for more",
+      period: "",
+      description: "For more groups, stories, and multiple platforms",
+      features: [
+        "More no. of groups and stories",
+        "One or multiple social media platforms",
+        "Networking and more engagement",
+        "100% Authentic Work & White-Hat Techniques",
+        "Monthly post and engagement report",
+      ],
+      note: "Contact us at +91-88-6087-6087 for a custom quote.",
+    },
+  ],
+
+  // ─── SOCIAL MEDIA MARKETING / ADS (SMM) ────────────────────────────────────
+  "Social Media Marketing": [
+    {
+      name: "Basic Plan",
+      price: "₹4,999",
+      period: "/month",
+      prices: {
+        "1 Month": "₹4,999",
+        "6 Months": "₹27,999",
+        "1 Year": "₹49,999",
+      },
+      description: "Paid Meta Ads with 1–2 campaigns for one platform",
+      features: [
+        "Paid advertising strategy (Meta Ads)",
+        "Lead generation & conversion-focused campaigns (1–2 campaigns)",
+        "Continuous optimization for better ROI",
+        "Content strategy & monthly planning calendar",
+        "Top result and popular keywords",
+        "Audience targeting & behaviour analysis",
+        "Organic growth & engagement strategy",
+        "Hashtag & keyword research",
+        "Retargeting & lookalike audience setup",
+        "Performance tracking & analytics",
+        "Monthly insights & reporting",
+        "Poster designs included",
+      ],
+      note: "Social Media Account must be at least one week old with a few posts. Website & Landing Page development charged separately.",
+    },
+    {
+      name: "Professional Plan",
+      price: "₹7,999",
+      period: "/month",
+      prices: {
+        "1 Month": "₹7,999",
+        "6 Months": "₹44,999",
+        "1 Year": "₹84,999",
+      },
+      description: "Up to 5 campaigns with full growth marketing strategy",
+      popular: true,
+      features: [
+        "Paid advertising strategy (Meta Ads)",
+        "Lead generation & conversion-focused campaigns (up to 5 campaigns)",
+        "Continuous optimization for better ROI",
+        "Content strategy & monthly planning calendar",
+        "Top result and popular keywords",
+        "Audience targeting & behaviour analysis",
+        "Organic growth & engagement strategy",
+        "Hashtag & keyword research",
+        "Retargeting & lookalike audience setup",
+        "Performance tracking & analytics",
+        "Monthly insights & reporting",
+        "Poster designs included",
+      ],
+      note: "Social Media Account must be at least one week old. Website & Landing Page development charged separately. Per additional ad set campaign: ₹2,499.",
+    },
+    {
+      name: "Custom Plan",
+      price: "Call for more",
+      period: "",
+      description: "Multiple platforms, full social media management & growth",
+      features: [
+        "Multiple platform ads management",
+        "With social media management",
+        "All growth marketing plan",
+        "For high-value products (Real estate etc.): agency fees from 20%",
+        "Per additional ad set campaign: ₹2,499",
+      ],
+      note: "Contact us at +91-88-6087-6087 for a custom quote.",
+    },
+  ],
+
+  // ─── PHOTO / VIDEO SHOOT ────────────────────────────────────────────────────
+  "Photo / Video Shoot": [
+    {
+      name: "Basic Plan",
+      price: "₹4,999",
+      period: "/day",
+      prices: {
+        "1 Month": "₹4,999",
+        "6 Months": "₹27,999",
+        "1 Year": "₹49,999",
+      },
+      description: "6-hour shoot day with 5 reels & product photos",
+      features: [
+        "Photo/Reel Shoot – ₹4,999 per day",
+        "Shoot time: 6 hours in a day",
+        "Expected 5 reels in a day",
+        "Pictures of the products",
+        "Engagement-focused editing",
+        "Model cost: ₹2,000–₹12,000 (additional)",
+        "Makeup artist cost from ₹2,000 (additional)",
+        "Studio cost (additional)",
+        "Lighting cost (additional)",
+      ],
+      note: "Social Media Account must be at least one week old. Poster designs included. Website & Landing Page development charged separately.",
+    },
+    {
+      name: "Professional Plan",
+      price: "₹7,999",
+      period: "/day",
+      prices: {
+        "1 Month": "₹7,999",
+        "6 Months": "₹44,999",
+        "1 Year": "₹84,999",
+      },
+      description: "7–8 hour shoot with content strategy & 6 reels",
+      popular: true,
+      features: [
+        "Photo/Reel Shoot – ₹7,999 per day",
+        "Shoot time: 7–8 hours in a day",
+        "Reel / Content idea and strategy from our side",
+        "Expected 6 reels in a day",
+        "Pictures of the products",
+        "Engagement-focused editing",
+        "Model cost: ₹2,000–₹12,000 (additional)",
+        "Makeup artist cost from ₹2,000 (additional)",
+        "Studio cost (additional)",
+        "Lighting cost (additional)",
+      ],
+      note: "Social Media Account must be at least one week old. Poster designs included. Website & Landing Page development charged separately.",
+    },
+    {
+      name: "Custom Plan",
+      price: "Call for more",
+      period: "",
+      description: "Product-wise photoshoots, multi-purpose models & advanced editing",
+      features: [
+        "Only photoshoot per product: ₹220/product (min. 10 products, 2-hour shoot)",
+        "Kids, Adult, Men, Women – different models for different purposes",
+        "Multi-purpose or group model cost (additional)",
+        "Expected high number of reels in a day",
+        "Advanced editing from ₹500/video with captions and images",
+        "Model cost: ₹2,000–₹12,000 (additional)",
+        "Makeup artist cost from ₹2,000 (additional)",
+        "Studio cost (additional)",
+        "Lighting cost (additional)",
+      ],
+      note: "Contact us at +91-88-6087-6087 for a custom quote.",
+    },
+  ],
+
+  // ─── PER VIDEO MARKETING (REEL BOOSTING) ───────────────────────────────────
+  "Per Video Marketing": [
+    {
+      name: "Reel Boosting",
+      price: "₹4,999",
+      period: "/video",
+      description: "Daily promotion with weekly reach target of 10K–20K+",
+      features: [
+        "Reel Boosting – ₹4,999 per video",
+        "Daily basis promotion per video",
+        "Weekly campaign options available",
+        "Optimised reel scripts & hooks",
+        "Engagement-focused editing",
+        "Weekly reach target: 10K – 20K+",
+        "Platforms: Instagram Reels, Facebook Reels, YouTube Shorts",
+      ],
+    },
+  ],
+
+  // ─── GOOGLE / META ADS (PPC) ────────────────────────────────────────────────
+  "Google & Meta Ads": [
+    {
+      name: "Campaign Creation",
+      price: "₹1,999",
+      period: "/ad set",
+      description: "One-time setup cost per ad set campaign",
+      features: [
+        "₹4,999 / ad set for 1–2 campaigns",
+        "₹2,999 / ad set for 3–15 campaigns",
+        "₹1,999 / ad set for 16–25 campaigns",
+        "Research & strategy",
+        "Attractive poster designs",
+        "Keyword & audience targeting",
+        "Privacy policy setup",
+        "Ad creation",
+      ],
+      note: "Social Media Account must be at least one week old. Poster designs included. Website & Landing Page development charged separately.",
+    },
+    {
+      name: "Campaign Management",
+      price: "₹4,999",
+      period: "/month/ad set",
+      description: "Ongoing management and optimisation of your ad campaigns",
+      popular: true,
+      features: [
+        "Agency fees: ₹4,999/month for products/services under ₹5,000",
+        "Agency fees: ₹6,999/month for products/services above ₹5,000",
+        "For high-value products (Real estate etc.): agency fees from 20%",
+        "Campaign management & optimisation",
+        "Detailed reporting & analytics",
+        "Upgrade & support",
+        "Cost reduces with increase in number of campaigns",
+      ],
+      note: "Ad budget is not included. Social Media Account must be at least one week old.",
+    },
+    {
+      name: "Custom Plan",
+      price: "Call for more",
+      period: "",
+      description: "Multiple platform ads management with social media included",
+      features: [
+        "Multiple platform ads management",
+        "With social media management",
+        "All growth marketing plan",
+        "Search Ads, Display Ads, YouTube Ads, Shopping Ads",
+        "App Promotion Ads, Local GMB Ads",
+        "Facebook, Instagram, LinkedIn, Snapchat",
+        "Poster Click Ads, WhatsApp Ads, Calls Ads",
+      ],
+      note: "Contact us at +91-88-6087-6087 for a custom quote.",
+    },
+  ],
+
+  // ─── GOOGLE MY BUSINESS (GMB) ───────────────────────────────────────────────
+  "Google My Business": [
+    {
+      name: "GMB Profile",
+      price: "₹4,999",
+      period: "/one-time",
+      description: "Basic GMB listing setup with verified account",
+      features: [
+        "Business profile info setup",
+        "Photos upload",
+        "Approved account",
+        "Verified account",
+        "No optimization & link building",
+      ],
+    },
+    {
+      name: "GMB with Review",
+      price: "₹5,999",
+      period: "/one-time",
+      description: "GMB listing with reviews and optimization",
+      popular: true,
+      features: [
+        "Business profile info setup",
+        "Poster design & upload",
+        "10 Reviews",
+        "Verified account",
+        "Optimization & 10 link building",
+      ],
+    },
+    {
+      name: "GMB with SEO",
+      price: "₹6,999",
+      period: "/one-time",
+      description: "Full GMB setup with maximum reviews and SEO",
+      features: [
+        "Business profile info setup",
+        "Poster design & upload",
+        "20 Reviews",
+        "Verified account",
+        "Optimization & 20 link building",
+      ],
+    },
+  ],
+
+  // ─── ON-PAGE SEO ────────────────────────────────────────────────────────────
+  "On-Page SEO": [
+    {
+      name: "Basic On-Page SEO",
+      price: "₹2,999",
+      period: "/one page",
+      description: "Essential on-page SEO for small websites",
+      features: [
+        "Page Titles & Meta Descriptions",
+        "Favicon & URL Optimization",
+        "Heading Tags (H1–H6)",
+        "Image Optimization (Banners)",
+        "Anchor Text with Keywords",
+        "Mobile-Friendly Design check",
+        "Basic Schema Markup",
+        "SSL Enabled",
+        "₹2,999/page | ₹4,999 for 5 pages | ₹7,999 for 10 pages",
+      ],
+      note: "SEO report shared with improved ranking after SEO. 90%–100% ranking improvement guaranteed. All red flags to be eliminated.",
+    },
+    {
+      name: "Detailed On-Page SEO",
+      price: "₹4,999",
+      period: "/one page",
+      description: "Advanced on-page SEO with full technical optimization",
+      popular: true,
+      features: [
+        "All Basic Plan features included",
+        "Google Console setup",
+        "Keyword Optimization",
+        "Schema Integration",
+        "SEO friendly sections",
+        "Image Title & Tags",
+        "Custom Robots & htaccess Rules",
+        "HTML & XML Sitemap",
+        "Google Analytics Pixel",
+        "Fast Load Speed & Image formatting",
+        "₹4,999/page | ₹7,999 for 5 pages | ₹9,999 for 10 pages",
+      ],
+      note: "SEO report shared with improved ranking after SEO. 90%–100% ranking improvement guaranteed.",
+    },
+    {
+      name: "Custom On-Page SEO",
+      price: "Call for more",
+      period: "",
+      description: "Full technical SEO with advanced tracking and API optimization",
+      features: [
+        "Google Analytics CAPI",
+        "Technical On-Page SEO",
+        "Image Resizing and Resolutions",
+        "Product Optimization",
+        "Ad Campaign Tracking",
+        "Other Tags, API and Analysis Based Optimization",
+      ],
+      note: "Contact us at +91-88-6087-6087 for a custom quote.",
+    },
+  ],
+
+  // ─── OFF-PAGE SEO ────────────────────────────────────────────────────────────
+  "Off-Page SEO": [
+    {
+      name: "Basic Off-Page SEO",
+      price: "₹14,999",
+      period: "/month",
+      prices: {
+        "1 Month": "₹14,999",
+        "6 Months": "₹89,994",
+        "1 Year": "₹179,988",
+      },
+      description: "50 high DA/PA backlinks with 10 keywords",
+      features: [
+        "Backlink Building – 50 High DAPA Links",
+        "Keyword Used: 10",
+        "Guest Posting",
+        "Content Link Building",
+        "Q&A Posting (Quora, Reddit)",
+        "Profile Link Building",
+        "100% Manual Work & White-Hat Techniques",
+        "Detailed report on completion",
+        "Delivery within 15–20 working days",
+      ],
+      note: "Minimum 3 months required to see effective results. Average 6 months SEO required for top results.",
+    },
+    {
+      name: "Detailed Off-Page SEO",
+      price: "₹24,999",
+      period: "/month",
+      prices: {
+        "1 Month": "₹24,999",
+        "6 Months": "₹149,994",
+        "1 Year": "₹299,988",
+      },
+      description: "100 high DA/PA backlinks with 20 keywords & full link strategy",
+      popular: true,
+      features: [
+        "All Basic Plan features included",
+        "Total 100 High DAPA Backlinks",
+        "Keyword Used: 20",
+        "Social Bookmarking",
+        "Directory Submissions",
+        "Forum Posting & Blog Commenting",
+        "Q&A Posting (Quora, Reddit)",
+        "Profile Link Building",
+        "Broken Link Building",
+        "100% Manual Work & White-Hat Techniques",
+        "Detailed report on completion",
+        "Delivery within 15–20 working days",
+      ],
+      note: "Minimum 3 months required to see effective results. Average 6 months SEO required for top results.",
+    },
+    {
+      name: "Custom Off-Page SEO",
+      price: "Call for more",
+      period: "",
+      description: "Increased backlinks, influencer outreach & press releases",
+      features: [
+        "For increased Backlinks, Keywords & Postings",
+        "Web 2.0 Submissions",
+        "Influencer Outreach",
+        "Press Releases",
+        "Brand Mentions",
+        "100% Manual Work & White-Hat Techniques",
+      ],
+      note: "Contact us at +91-88-6087-6087 for a custom quote.",
+    },
+  ],
+
+  // ─── BULK WHATSAPP MARKETING ────────────────────────────────────────────────
+  "Bulk WhatsApp Marketing": [
+    {
+      name: "Virtual Bulk WhatsApp",
+      price: "₹0.15",
+      period: "/message",
+      description: "Send bulk WhatsApp messages via virtual numbers — no account blocking",
+      features: [
+        "Send bulk WhatsApp messages from virtual numbers",
+        "No account blocking",
+        "Independent panel",
+        "Send messages anytime",
+        "Send without limit",
+        "Track delivery status",
+        "Share WhatsApp link or number in message",
+        "Minimum recharge: 10,000 messages",
+        "15 Paisa per WA message",
+      ],
+      note: "18% GST applicable on base price. Pricing subject to change.",
+    },
+    {
+      name: "Bulk SMS Marketing",
+      price: "₹0.15",
+      period: "/SMS",
+      description: "Send bulk SMS anytime using your own numbers with DLT compliance",
+      features: [
+        "Send bulk SMS anytime using your numbers",
+        "Independent panel",
+        "Send message anytime",
+        "Send without limit",
+        "Track delivery status",
+        "DLT License required",
+        "Minimum recharge: 10,000 SMS",
+        "15 Paisa per SMS",
+      ],
+      note: "Promotional campaign timing: 9 AM–9 PM. Transactional messages 24×7. DLT registration mandatory as per TRAI. 18% GST applicable.",
+    },
+    {
+      name: "Bulk Email Marketing",
+      price: "₹0.10",
+      period: "/email",
+      description: "Send bulk emails for targeted campaigns without spam",
+      popular: true,
+      features: [
+        "Send bulk emails for email marketing anytime",
+        "Independent panel",
+        "Launch targeted campaigns",
+        "Send scheduled mails",
+        "Add multiple gateways",
+        "Send emails without spam",
+        "Track delivery status",
+        "10 Paisa per email",
+      ],
+      note: "18% GST applicable. Service will be delivery-based; refund at end of month for undelivered messages.",
+    },
+  ],
+
+  // ─── BULK SMS SERVICE (DETAILED PRICING) ───────────────────────────────────
+  "Bulk SMS Service": [
+    {
+      name: "Bulk SMS",
+      price: "₹0.15",
+      period: "/SMS",
+      description: "1 Lakh credits for bulk promotional or transactional SMS",
+      features: [
+        "Bulk SMS Service – 1 Lakh Credits at ₹0.15 INR per SMS",
+        "OTP SMS Service – 1 Lakh Credits at ₹0.16 INR per OTP SMS",
+        "Including DLT Charges: ₹0.025 INR",
+        "Schedule Messages",
+        "Launch Targeted Campaigns",
+        "Use Android SIMs as a gateway",
+        "Send Bulk SMS",
+        "Promotional campaign timing: 9 AM to 9 PM",
+        "Transactional messages: 24×7",
+      ],
+      note: "DLT registration mandatory as per TRAI. 18% GST applicable on base price. Refund provided at end of month for undelivered. Proposal valid for 15 days only.",
+    },
+  ],
+
+  // ─── DIGITAL MARKETING PACKAGES ────────────────────────────────────────────
   "Digital Marketing": [
     {
       name: "Starter",
@@ -72,7 +628,7 @@ export const pricingData: Record<string, PricingPlan[]> = {
       prices: {
         "1 Month": "₹10,000",
         "6 Months": "₹60,000",
-        "1 Year": "₹120,000"
+        "1 Year": "₹1,20,000",
       },
       description: "Perfect for small businesses starting their digital journey",
       features: [
@@ -89,8 +645,8 @@ export const pricingData: Record<string, PricingPlan[]> = {
       period: "/month",
       prices: {
         "1 Month": "₹20,000",
-        "6 Months": "₹120,000",
-        "1 Year": "₹240,000"
+        "6 Months": "₹1,20,000",
+        "1 Year": "₹2,40,000",
       },
       description: "Ideal for growing businesses looking to expand online",
       popular: true,
@@ -110,8 +666,8 @@ export const pricingData: Record<string, PricingPlan[]> = {
       period: "/month",
       prices: {
         "1 Month": "₹35,000",
-        "6 Months": "₹210,000",
-        "1 Year": "₹420,000"
+        "6 Months": "₹2,10,000",
+        "1 Year": "₹4,20,000",
       },
       description: "Comprehensive solution for established businesses",
       features: [
@@ -127,6 +683,76 @@ export const pricingData: Record<string, PricingPlan[]> = {
       ],
     },
   ],
+
+  // ─── INDIVIDUAL DIGITAL MARKETING SERVICES ─────────────────────────────────
+  "SEO Service": [
+    {
+      name: "SEO – ₹19,999/month",
+      price: "₹19,999",
+      period: "/month",
+      description: "Full SEO service including on-page, off-page, link building & reporting",
+      features: [
+        "Link Building",
+        "Article Listing",
+        "Blog Posting",
+        "Keyword Research",
+        "Technical SEO",
+        "Thrice a week posting",
+        "Monthly Report",
+      ],
+    },
+  ],
+
+  "Pay Per Click": [
+    {
+      name: "PPC / Ads Management",
+      price: "₹4,499",
+      period: "/ad",
+      description: "Managed ads across Google, YouTube, Facebook & Instagram",
+      features: [
+        "YouTube Ads",
+        "Facebook Ads",
+        "Instagram Ads",
+        "Search Ads",
+        "Google Map Ads",
+      ],
+    },
+  ],
+
+  "WhatsApp Marketing Setup": [
+    {
+      name: "WhatsApp Marketing",
+      price: "₹6,499",
+      period: "/one-time",
+      description: "Full WhatsApp marketing setup with chatbot and promotional messages",
+      features: [
+        "Marketing through API",
+        "WhatsApp link on website",
+        "Chat Bots setup",
+        "Promotional Messages",
+        "Channel building",
+      ],
+    },
+  ],
+
+  "Content Marketing": [
+    {
+      name: "Content Marketing",
+      price: "₹4,999",
+      period: "/content/month",
+      description: "Daily content creation and distribution per platform",
+      features: [
+        "Article writing",
+        "Blog Writing",
+        "Graphic Posting",
+        "Content designing",
+        "Q&A Posting",
+        "Product and Service market research",
+      ],
+    },
+  ],
+
+  // ─── WEBSITE & APP DEVELOPMENT ─────────────────────────────────────────────
   "Website & App Development": [
     {
       name: "Basic Website",
@@ -177,6 +803,8 @@ export const pricingData: Record<string, PricingPlan[]> = {
       ],
     },
   ],
+
+  // ─── SAAS SERVICES ──────────────────────────────────────────────────────────
   "SaaS Services": [
     {
       name: "Basic Plan",
@@ -185,10 +813,16 @@ export const pricingData: Record<string, PricingPlan[]> = {
       prices: {
         "1 Month": "₹5,000",
         "6 Months": "₹30,000",
-        "1 Year": "₹60,000"
+        "1 Year": "₹60,000",
       },
       description: "Essential SaaS tools for small teams",
-      features: ["Up to 10 Users", "Basic Features", "Email Support", "Monthly Backups", "99% Uptime SLA"],
+      features: [
+        "Up to 10 Users",
+        "Basic Features",
+        "Email Support",
+        "Monthly Backups",
+        "99% Uptime SLA",
+      ],
     },
     {
       name: "Business Plan",
@@ -197,7 +831,7 @@ export const pricingData: Record<string, PricingPlan[]> = {
       prices: {
         "1 Month": "₹15,000",
         "6 Months": "₹90,000",
-        "1 Year": "₹180,000"
+        "1 Year": "₹1,80,000",
       },
       description: "Advanced features for growing businesses",
       popular: true,
@@ -217,8 +851,8 @@ export const pricingData: Record<string, PricingPlan[]> = {
       period: "/month",
       prices: {
         "1 Month": "₹40,000",
-        "6 Months": "₹240,000",
-        "1 Year": "₹480,000"
+        "6 Months": "₹2,40,000",
+        "1 Year": "₹4,80,000",
       },
       description: "Complete solution for large organizations",
       features: [
@@ -234,6 +868,8 @@ export const pricingData: Record<string, PricingPlan[]> = {
       ],
     },
   ],
+
+  // ─── DESIGNING SERVICES ─────────────────────────────────────────────────────
   "Designing Services": [
     {
       name: "Logo Package",
@@ -284,6 +920,55 @@ export const pricingData: Record<string, PricingPlan[]> = {
       ],
     },
   ],
+
+  // ─── INTEGRATION SERVICES ───────────────────────────────────────────────────
+  "Integration Services": [
+    {
+      name: "SMS Integration",
+      price: "₹10,000",
+      period: "/One-Time",
+      description: "Perfect for small businesses starting with SMS automation",
+      features: [
+        "SMS API Integration",
+        "Bulk SMS Sending System",
+        "OTP & Verification SMS",
+        "Delivery Reports (DLR)",
+        "Basic Dashboard Setup",
+      ],
+      note: "API cost is not included. It may vary based on number of users and services used.",
+    },
+    {
+      name: "WhatsApp Integration",
+      price: "₹20,000",
+      period: "/One-Time",
+      description: "For growing businesses seeking better customer engagement",
+      popular: true,
+      features: [
+        "WhatsApp Business API Integration",
+        "Automated Message Templates",
+        "Chatbot Setup (Basic)",
+        "Order & Notification Alerts",
+        "CRM Integration Support",
+        "Priority Support",
+      ],
+      note: "API cost is not included. It may vary based on number of users and services used.",
+    },
+    {
+      name: "IVR Integration",
+      price: "₹30,000",
+      period: "/One-Time",
+      description: "Complete IVR solution for call automation",
+      features: [
+        "Multi-level IVR Call Flow Setup",
+        "Call Routing System",
+        "Voice Recording & Playback",
+        "Missed Call Alerts",
+        "Call Analytics Dashboard",
+        "Custom Greeting Setup",
+      ],
+      note: "API cost is not included. It may vary based on number of users and services used.",
+    },
+  ],
 }
 
 export const individualPricingData: Record<string, PricingPlan[]> = {
@@ -295,7 +980,7 @@ export const individualPricingData: Record<string, PricingPlan[]> = {
       prices: {
         "1 Month": "₹10,000",
         "6 Months": "₹60,000",
-        "1 Year": "₹120,000"
+        "1 Year": "₹1,20,000",
       },
       description: "For small businesses starting with SEO",
       features: [
@@ -311,8 +996,8 @@ export const individualPricingData: Record<string, PricingPlan[]> = {
       period: "/month",
       prices: {
         "1 Month": "₹25,000",
-        "6 Months": "₹150,000",
-        "1 Year": "₹300,000"
+        "6 Months": "₹1,50,000",
+        "1 Year": "₹3,00,000",
       },
       description: "For growing businesses",
       popular: true,
@@ -330,8 +1015,8 @@ export const individualPricingData: Record<string, PricingPlan[]> = {
       period: "/month",
       prices: {
         "1 Month": "₹50,000",
-        "6 Months": "₹300,000",
-        "1 Year": "₹600,000"
+        "6 Months": "₹3,00,000",
+        "1 Year": "₹6,00,000",
       },
       description: "For large businesses",
       features: [
@@ -343,6 +1028,7 @@ export const individualPricingData: Record<string, PricingPlan[]> = {
       ],
     },
   ],
+
   "Google/Meta Ads": [
     {
       name: "Ads Management",
@@ -351,57 +1037,175 @@ export const individualPricingData: Record<string, PricingPlan[]> = {
       prices: {
         "1 Month": "From ₹15,000",
         "6 Months": "From ₹90,000",
-        "1 Year": "From ₹180,000"
+        "1 Year": "From ₹1,80,000",
       },
-      description: "Professional ad campaign management (+ ad budget)",
+      description: "Professional ad campaign management (+ ad budget separate)",
       features: [
         "Campaign Strategy & Setup",
         "Ad Copy & Creative Direction",
         "Audience Targeting",
         "Continuous Optimization",
         "Performance Tracking",
+        "Search Ads, Display Ads, YouTube Ads, GMB Ads",
+        "Facebook, Instagram, LinkedIn, Snapchat Ads",
       ],
-    }
+    },
   ],
+
   "Social Media Marketing": [
     {
-      name: "SMM Package",
-      price: "From ₹12,000",
+      name: "SMM – Basic",
+      price: "₹4,999",
       period: "/month",
       prices: {
-        "1 Month": "From ₹12,000",
-        "6 Months": "From ₹72,000",
-        "1 Year": "From ₹144,000"
+        "1 Month": "₹4,999",
+        "6 Months": "₹27,999",
+        "1 Year": "₹49,999",
       },
-      description: "Engage your audience across social platforms",
+      description: "Meta Ads with 1–2 campaigns for one platform",
       features: [
-        "Platform Management",
-        "Content Creation & Posting",
-        "Community Engagement",
-        "Follower Growth Strategy",
-        "Monthly Analytics",
+        "Paid advertising strategy (Meta Ads)",
+        "Lead generation campaigns (1–2 campaigns)",
+        "Content strategy & monthly planning calendar",
+        "Audience targeting & behaviour analysis",
+        "Retargeting & lookalike audience setup",
+        "Performance tracking & monthly reporting",
       ],
-    }
+    },
+    {
+      name: "SMM – Professional",
+      price: "₹7,999",
+      period: "/month",
+      prices: {
+        "1 Month": "₹7,999",
+        "6 Months": "₹44,999",
+        "1 Year": "₹84,999",
+      },
+      description: "Up to 5 campaigns with full growth marketing strategy",
+      popular: true,
+      features: [
+        "Paid advertising strategy (Meta Ads)",
+        "Lead generation campaigns (up to 5 campaigns)",
+        "Content strategy & monthly planning calendar",
+        "Audience targeting & behaviour analysis",
+        "Retargeting & lookalike audience setup",
+        "Performance tracking & monthly reporting",
+        "Hashtag & keyword research",
+        "Organic growth & engagement strategy",
+      ],
+    },
   ],
+
+  "Social Media Handling": [
+    {
+      name: "SMH – Basic",
+      price: "₹7,999",
+      period: "/month",
+      prices: {
+        "1 Month": "₹7,999",
+        "6 Months": "₹27,999",
+        "1 Year": "₹49,999",
+      },
+      description: "Up to 10 Reels / 5 Posts for one platform",
+      features: [
+        "Up to 10 Reels / 5 Posts per month",
+        "Any one platform",
+        "Pre Shoot Reel/Video enhancement",
+        "Account setup & optimization",
+        "Monthly content strategy & posting calendar",
+        "Campaign & festival creatives",
+        "Brand tone & visual consistency",
+      ],
+    },
+    {
+      name: "SMH – Advanced",
+      price: "₹9,999",
+      period: "/month",
+      prices: {
+        "1 Month": "₹9,999",
+        "6 Months": "₹44,999",
+        "1 Year": "₹84,999",
+      },
+      description: "Up to 15 Reels / 10 Posts for one platform",
+      popular: true,
+      features: [
+        "Up to 15 Reels / 10 Posts per month",
+        "Any one platform",
+        "Pre Shoot Reel/Video enhancement",
+        "Account setup & optimization",
+        "Monthly content strategy & posting calendar",
+        "Campaign & festival creatives",
+        "Brand tone & visual consistency",
+        "Monthly post and engagement report",
+      ],
+    },
+  ],
+
   "WhatsApp Marketing": [
     {
-      name: "WhatsApp Package",
-      price: "From ₹8,000",
-      period: "/month",
+      name: "Bulk WhatsApp",
+      price: "₹0.15",
+      period: "/message",
       prices: {
-        "1 Month": "From ₹8,000",
-        "6 Months": "From ₹48,000",
-        "1 Year": "From ₹96,000"
+        "1 Month": "From ₹1,500",
+        "6 Months": "From ₹9,000",
+        "1 Year": "From ₹18,000",
       },
-      description: "Direct outreach via WhatsApp",
+      description: "Direct outreach via bulk WhatsApp messages",
       features: [
-        "Bulk Message Campaigns",
+        "Bulk Message Campaigns via virtual numbers",
+        "No account blocking",
         "Automated Replies Setup",
         "Contact List Management",
-        "Campaign Analytics",
+        "Campaign Analytics & delivery tracking",
+        "Minimum 10,000 messages per recharge",
       ],
-    }
+      note: "18% GST applicable. Pricing subject to change.",
+    },
   ],
+
+  "Google My Business": [
+    {
+      name: "GMB Profile",
+      price: "₹4,999",
+      period: "/one-time",
+      description: "Basic GMB listing with verified account",
+      features: [
+        "Business profile info setup",
+        "Photos upload",
+        "Approved & Verified account",
+        "No optimization & link building",
+      ],
+    },
+    {
+      name: "GMB with Review",
+      price: "₹5,999",
+      period: "/one-time",
+      description: "GMB listing with poster, 10 reviews & optimization",
+      popular: true,
+      features: [
+        "Business profile info setup",
+        "Poster design & upload",
+        "10 Reviews",
+        "Verified account",
+        "Optimization & 10 link building",
+      ],
+    },
+    {
+      name: "GMB with SEO",
+      price: "₹6,999",
+      period: "/one-time",
+      description: "Full GMB setup with 20 reviews and SEO",
+      features: [
+        "Business profile info setup",
+        "Poster design & upload",
+        "20 Reviews",
+        "Verified account",
+        "Optimization & 20 link building",
+      ],
+    },
+  ],
+
   "Website Development": [
     {
       name: "Website Project",
@@ -415,8 +1219,9 @@ export const individualPricingData: Record<string, PricingPlan[]> = {
         "Contact Forms & Integrations",
         "Speed Optimization",
       ],
-    }
+    },
   ],
+
   "E-commerce": [
     {
       name: "E-commerce Store",
@@ -430,8 +1235,9 @@ export const individualPricingData: Record<string, PricingPlan[]> = {
         "Order Management Dashboard",
         "Mobile Optimized",
       ],
-    }
+    },
   ],
+
   "App Development": [
     {
       name: "Mobile Application",
@@ -445,8 +1251,9 @@ export const individualPricingData: Record<string, PricingPlan[]> = {
         "Push Notifications",
         "App Store Submission",
       ],
-    }
+    },
   ],
+
   "Logo Design": [
     {
       name: "Logo Design",
@@ -460,8 +1267,9 @@ export const individualPricingData: Record<string, PricingPlan[]> = {
         "Vector Formats Included",
         "Brand Guidelines (Optional)",
       ],
-    }
+    },
   ],
+
   "UI/UX Design": [
     {
       name: "UI/UX Project",
@@ -475,6 +1283,6 @@ export const individualPricingData: Record<string, PricingPlan[]> = {
         "Interactive Prototypes",
         "Design System Delivery",
       ],
-    }
-  ]
+    },
+  ],
 }

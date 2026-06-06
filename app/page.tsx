@@ -141,7 +141,7 @@ export default function Home() {
       review:
         "Working with Webeside Technology has been an absolute game-changer for our business. They transformed our outdated website into a modern, high-performing platform that not only looks stunning but has increased our online conversions by 300%. Their team's expertise, professionalism, and dedication to our success is truly exceptional.",
       initials: "RK",
-      clientName: "Mr Tarun",
+      clientName: "Mr Tarun ",
       position: "CEO & Founder",
       projectName: "TechStart India Portal",
       serviceType: "Website Development",
@@ -186,7 +186,7 @@ export default function Home() {
       review:
         "From concept to launch, Webeside Technology provided a seamless experience. Their mobile app development team is top-notch, delivering a high-quality product on time and within budget. Our users love the new app!",
       initials: "AL",
-      clientName: "Mis Abhora",
+      clientName: "MS. Aoksana Bora",
       position: "Product Manager",
       projectName: "ConnectApp Mobile",
       serviceType: "Mobile App Development",
@@ -201,8 +201,8 @@ export default function Home() {
       review:
         "Webeside Technology helped us redesign our corporate website with a focus on user experience and brand storytelling. The new design is modern, engaging, and has received fantastic feedback from our stakeholders.",
       initials: "MC",
-      clientName: "Michael Chen",
-      position: "Head of Communications",
+      clientName: "WB Tech Team",
+      position: "Team",
       projectName: "Innovate Solutions Corp.",
       serviceType: "Website Redesign",
       industry: "Corporate",
