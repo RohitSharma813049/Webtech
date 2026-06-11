@@ -13,7 +13,7 @@ export interface PricingPlan {
   popular?: boolean
 }
 
-export const pricingData: Record<string, PricingPlan[]> = {
+const categoryPricingData: Record<string, PricingPlan[]> = {
 
   // ─── SOCIAL MEDIA HANDLING (SMH) ───────────────────────────────────────────
   "Social Media Handling": [
@@ -373,7 +373,7 @@ export const pricingData: Record<string, PricingPlan[]> = {
   "Google My Business": [
     {
       name: "GMB Profile",
-      price: "₹4,999",
+      price: "₹5,999",
       period: "/one-time",
       description: "Basic GMB listing setup with verified account",
       features: [
@@ -386,7 +386,7 @@ export const pricingData: Record<string, PricingPlan[]> = {
     },
     {
       name: "GMB with Review",
-      price: "₹5,999",
+      price: "₹4,999",
       period: "/one-time",
       description: "GMB listing with reviews and optimization",
       popular: true,
@@ -544,8 +544,8 @@ export const pricingData: Record<string, PricingPlan[]> = {
   "Bulk WhatsApp Marketing": [
     {
       name: "Virtual Bulk WhatsApp",
-      price: "₹0.15",
-      period: "/message",
+      price: "Price on Demand",
+      period: "/month",
       description: "Send bulk WhatsApp messages via virtual numbers — no account blocking",
       features: [
         "Send bulk WhatsApp messages from virtual numbers",
@@ -556,14 +556,14 @@ export const pricingData: Record<string, PricingPlan[]> = {
         "Track delivery status",
         "Share WhatsApp link or number in message",
         "Minimum recharge: 10,000 messages",
-        "15 Paisa per WA message",
+        "Custom monthly plans available",
       ],
       note: "18% GST applicable on base price. Pricing subject to change.",
     },
     {
       name: "Bulk SMS Marketing",
-      price: "₹0.15",
-      period: "/SMS",
+      price: "Price on Demand",
+      period: "/month",
       description: "Send bulk SMS anytime using your own numbers with DLT compliance",
       features: [
         "Send bulk SMS anytime using your numbers",
@@ -573,14 +573,14 @@ export const pricingData: Record<string, PricingPlan[]> = {
         "Track delivery status",
         "DLT License required",
         "Minimum recharge: 10,000 SMS",
-        "15 Paisa per SMS",
+        "Custom monthly plans available",
       ],
       note: "Promotional campaign timing: 9 AM–9 PM. Transactional messages 24×7. DLT registration mandatory as per TRAI. 18% GST applicable.",
     },
     {
       name: "Bulk Email Marketing",
-      price: "₹0.10",
-      period: "/email",
+      price: "Price on Demand",
+      period: "/month",
       description: "Send bulk emails for targeted campaigns without spam",
       popular: true,
       features: [
@@ -591,7 +591,7 @@ export const pricingData: Record<string, PricingPlan[]> = {
         "Add multiple gateways",
         "Send emails without spam",
         "Track delivery status",
-        "10 Paisa per email",
+        "Custom monthly plans available",
       ],
       note: "18% GST applicable. Service will be delivery-based; refund at end of month for undelivered messages.",
     },
@@ -601,8 +601,8 @@ export const pricingData: Record<string, PricingPlan[]> = {
   "Bulk SMS Service": [
     {
       name: "Bulk SMS",
-      price: "₹0.15",
-      period: "/SMS",
+      price: "Price on Demand",
+      period: "/month",
       description: "1 Lakh credits for bulk promotional or transactional SMS",
       features: [
         "Bulk SMS Service – 1 Lakh Credits at ₹0.15 INR per SMS",
@@ -935,10 +935,10 @@ export const pricingData: Record<string, PricingPlan[]> = {
         "Delivery Reports (DLR)",
         "Basic Dashboard Setup",
       ],
-      note: "API cost is not included. It may vary based on number of users and services used.",
+      note: "API cost is not included in this integration cost. It may vary based on number of users and services used.",
     },
     {
-      name: "WhatsApp Integration",
+      name: "Whatsapp Integration",
       price: "₹20,000",
       period: "/One-Time",
       description: "For growing businesses seeking better customer engagement",
@@ -951,7 +951,7 @@ export const pricingData: Record<string, PricingPlan[]> = {
         "CRM Integration Support",
         "Priority Support",
       ],
-      note: "API cost is not included. It may vary based on number of users and services used.",
+      note: "API cost is not included in this integration cost. It may vary based on number of users and services used.",
     },
     {
       name: "IVR Integration",
@@ -966,12 +966,20 @@ export const pricingData: Record<string, PricingPlan[]> = {
         "Call Analytics Dashboard",
         "Custom Greeting Setup",
       ],
-      note: "API cost is not included. It may vary based on number of users and services used.",
+      note: "API cost is not included in this integration cost. It may vary based on number of users and services used.",
     },
   ],
 }
 
-export const individualPricingData: Record<string, PricingPlan[]> = {
+export const pricingData: Record<string, PricingPlan[]> = {
+  "Integration Services": categoryPricingData["Integration Services"],
+  "Website & App Development": categoryPricingData["Website & App Development"],
+  "SaaS Services": categoryPricingData["SaaS Services"],
+  "Designing Services": categoryPricingData["Designing Services"],
+  "Digital Marketing": categoryPricingData["Digital Marketing"],
+}
+
+const baseIndividualPricingData: Record<string, PricingPlan[]> = {
   "SEO": [
     {
       name: "Basic SEO",
@@ -1144,13 +1152,8 @@ export const individualPricingData: Record<string, PricingPlan[]> = {
   "WhatsApp Marketing": [
     {
       name: "Bulk WhatsApp",
-      price: "₹0.15",
-      period: "/message",
-      prices: {
-        "1 Month": "From ₹1,500",
-        "6 Months": "From ₹9,000",
-        "1 Year": "From ₹18,000",
-      },
+      price: "Price on Demand",
+      period: "/month",
       description: "Direct outreach via bulk WhatsApp messages",
       features: [
         "Bulk Message Campaigns via virtual numbers",
@@ -1167,7 +1170,7 @@ export const individualPricingData: Record<string, PricingPlan[]> = {
   "Google My Business": [
     {
       name: "GMB Profile",
-      price: "₹4,999",
+      price: "₹5,999",
       period: "/one-time",
       description: "Basic GMB listing with verified account",
       features: [
@@ -1179,7 +1182,7 @@ export const individualPricingData: Record<string, PricingPlan[]> = {
     },
     {
       name: "GMB with Review",
-      price: "₹5,999",
+      price: "₹4,999",
       period: "/one-time",
       description: "GMB listing with poster, 10 reviews & optimization",
       popular: true,
@@ -1285,4 +1288,133 @@ export const individualPricingData: Record<string, PricingPlan[]> = {
       ],
     },
   ],
+}
+
+export const individualPricingData: Record<string, PricingPlan[]> = {
+  ...baseIndividualPricingData,
+  "SEO": [
+    {
+      name: "SEO Service",
+      price: "₹19,999",
+      period: "/month",
+      description: "Full SEO service including on-page, off-page, link building & reporting",
+      features: [
+        "Link Building",
+        "Article Listing",
+        "Blog Posting",
+        "Keyword Research",
+        "Technical SEO",
+        "Thrice a week posting",
+        "Monthly Report",
+      ],
+    },
+  ],
+  "Digital Marketing Services": [
+    {
+      name: "SEO Service",
+      price: "₹19,999",
+      period: "/month",
+      description: "Full SEO service including on-page, off-page, link building & reporting",
+      features: [
+        "Link Building",
+        "Article Listing",
+        "Blog Posting",
+        "Keyword Research",
+        "Technical SEO",
+        "Thrice a week posting",
+        "Monthly Report",
+      ],
+    },
+    {
+      name: "PPC / Ads Management",
+      price: "₹4,499",
+      period: "/ad",
+      description: "Managed ads across Google, YouTube, Facebook & Instagram",
+      features: [
+        "YouTube Ads",
+        "Facebook Ads",
+        "Instagram Ads",
+        "Search Ads",
+        "Google Map Ads",
+      ],
+    },
+    {
+      name: "Social Media Marketing",
+      price: "₹9,999",
+      period: "/platform/month",
+      description: "Social media marketing for one platform",
+      features: [
+        "YouTube Promotion",
+        "Facebook",
+        "Instagram",
+        "LinkedIn",
+        "Pinterest",
+      ],
+    },
+    {
+      name: "WhatsApp Marketing Setup",
+      price: "₹6,499",
+      period: "/one-time",
+      description: "WhatsApp marketing setup with API, website link, chatbot, promotional messages, and channel building",
+      features: [
+        "Marketing through API",
+        "WhatsApp link on website",
+        "Chat Bots setup",
+        "Promotional Messages",
+        "Channel building",
+      ],
+    },
+    {
+      name: "Content Marketing",
+      price: "₹4,999",
+      period: "/content/month",
+      description: "Content marketing per content per month",
+      features: [
+        "Article writing",
+        "Blog Writing",
+        "Graphic Posting",
+        "Content designing",
+        "Q&A Posting",
+        "Product and Service market research",
+      ],
+    },
+    {
+      name: "Affiliate Marketing",
+      price: "On Demand",
+      period: "",
+      description: "Affiliate marketing support for ecommerce and social collaborations",
+      features: [
+        "Sell your products on other ecommerce websites",
+        "Collaborate on social media with other popular businesses",
+      ],
+    },
+    {
+      name: "Direct Marketing",
+      price: "On Demand",
+      period: "",
+      description: "Direct promotion for B2B and B2C campaigns",
+      features: [
+        "B2B Marketing",
+        "B2C Marketing",
+        "Direct Promotion",
+        "Direct Messages",
+        "Direct Emails",
+      ],
+    },
+  ],
+  "Pay Per Click": categoryPricingData["Pay Per Click"],
+  "WhatsApp Marketing Setup": categoryPricingData["WhatsApp Marketing Setup"],
+  "Content Marketing": categoryPricingData["Content Marketing"],
+  "Social Media Handling": categoryPricingData["Social Media Handling"],
+  "Social Media Networking": categoryPricingData["Social Media Networking"],
+  "Social Media Marketing": categoryPricingData["Social Media Marketing"],
+  "Photo / Video Shoot": categoryPricingData["Photo / Video Shoot"],
+  "Per Video Marketing": categoryPricingData["Per Video Marketing"],
+  "Google & Meta Ads": categoryPricingData["Google & Meta Ads"],
+  "Google/Meta Ads": categoryPricingData["Google & Meta Ads"],
+  "Google My Business": categoryPricingData["Google My Business"],
+  "On-Page SEO": categoryPricingData["On-Page SEO"],
+  "Off-Page SEO": categoryPricingData["Off-Page SEO"],
+  "Bulk WhatsApp Marketing": categoryPricingData["Bulk WhatsApp Marketing"],
+  "Bulk SMS Service": categoryPricingData["Bulk SMS Service"],
 }
