@@ -177,7 +177,7 @@ export function Header() {
         <div
           className={` mx-auto border border-border mt-5  shadow-lg transition-all duration-300 ${isScrolled
             ? "backdrop-blur-sm bg-background/80 w-screen"
-            : "bg-transparent w-[85%] rounded-xl"
+            : "bg-white/90 backdrop-blur-md  w-[85%] rounded-xl"
             }`}
         >
 
@@ -190,14 +190,14 @@ export function Header() {
               {/* DESKTOP NAV */}
               <div className="hidden xl:flex items-center gap-5 2xl:gap-7 animate-in slide-in-from-left duration-500">
                 <div className="relative group/leftlogo">
-                  <Link href="/" className="flex items-center gap-1 font-extrabold text-yellow-600 text-xl tracking-wide drop-shadow-[0_0_8px_rgba(234,179,8,0.7)] transition-all duration-300 hover:scale-105 hover:text-amber-400">
+                  <Link href="/" className="flex items-center gap-1 font-extrabold text-[--primary] text-xl tracking-wide transition-all duration-300 hover:scale-105 hover:text-[--primary]">
                     <span className="inline-block transition-transform duration-500">
                       <i>WB</i>
                     </span>
                     <span>TECH</span>
                     {/* Small sliding home icon */}
                     <span className="w-0 overflow-hidden group-hover/leftlogo:w-5 transition-all duration-300 flex items-center justify-center">
-                      <HomeIcon className="w-4 h-4 text-amber-400 ml-1 opacity-0 group-hover/leftlogo:opacity-100 transition-opacity duration-300" />
+                      <HomeIcon className="w-4 h-4 text-[--primary] ml-1 opacity-0 group-hover/leftlogo:opacity-100 transition-opacity duration-300" />
                     </span>
                   </Link>
                 </div>
@@ -412,14 +412,14 @@ export function Header() {
 
               {/* MOBILE SPACE */}
               <div className="lg:hidden relative group/leftlogo">
-                <Link href="/" className="flex items-center gap-1 font-extrabold text-yellow-500 text-xs tracking-wide drop-shadow-[0_0_8px_rgba(234,179,8,0.7)] transition-all duration-300 hover:scale-105 hover:text-amber-400">
+                <Link href="/" className="flex items-center gap-1 font-extrabold text-[--primary] text-xs tracking-wide  transition-all duration-300 hover:scale-105 text-[--primary]">
                   <span className="inline-block transition-transform duration-500">
                     <i>WB</i>
                   </span>
                   <span>TECH</span>
                   {/* Small sliding home icon */}
                   <span className="w-0 overflow-hidden group-hover/leftlogo:w-5 transition-all duration-300 flex items-center justify-center">
-                    <HomeIcon className="w-4 h-4 text-amber-400 ml-1 opacity-0 group-hover/leftlogo:opacity-100 transition-opacity duration-300" />
+                    <HomeIcon className="w-4 h-4 text-[--primary] ml-1 opacity-0 group-hover/leftlogo:opacity-100 transition-opacity duration-300" />
                   </span>
                 </Link>
               </div>
